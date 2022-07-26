@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger cover_height;
 /** 文件格式，不含"." */
 @property (nonatomic, copy) NSString *file_type;
+/** 本地视频路径 */
+@property(nonatomic, copy) NSString *path;
 /** 视频时长，单位：秒 */
 @property(nonatomic, assign) NSInteger duration;
 /** 视频文件大小，单位：byte */

@@ -19,11 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 初始化SDK
- * @param appId 产品id
+ * @param productId 产品id
  * @param channelId 渠道id
  * @param cpId 产品cpid
  */
-- (void)initWithAppId:(NSString * _Nonnull)appId
+- (void)initWithProductId:(NSString * _Nonnull)productId
             channelId:(NSString * _Nonnull)channelId
                  cpid:(NSInteger)cpId;
 

@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A1FE5C0F371AA1081C609AB6 /* Pods_RXIMSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */; };
+		B544B730288F8D8C0095BEE1 /* file.txt in Resources */ = {isa = PBXBuildFile; fileRef = B544B72F288F8D8C0095BEE1 /* file.txt */; };
+		B544B732288F93450095BEE1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = B544B731288F93450095BEE1 /* location.png */; };
+		B544B734288FC1C40095BEE1 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = B544B733288FC1C40095BEE1 /* img.png */; };
 		B54D522C2884F72E00BAF2F1 /* audio.amr in Resources */ = {isa = PBXBuildFile; fileRef = B54D522B2884F72E00BAF2F1 /* audio.amr */; };
 		B5551A62284DED3B00F91338 /* TestActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A4C284DED3B00F91338 /* TestActivity.m */; };
-		B5551A63284DED3B00F91338 /* wechat_login_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5551A4E284DED3B00F91338 /* wechat_login_image@3x.png */; };
 		B5551A64284DED3B00F91338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5551A4F284DED3B00F91338 /* Assets.xcassets */; };
 		B5551A66284DED3B00F91338 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A51284DED3B00F91338 /* ViewController.m */; };
 		B5551A67284DED3B00F91338 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A52284DED3B00F91338 /* SceneDelegate.m */; };
@@ -18,7 +20,6 @@
 		B5551A69284DED3B00F91338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5551A55284DED3B00F91338 /* Main.storyboard */; };
 		B5551A6A284DED3B00F91338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A58284DED3B00F91338 /* main.m */; };
 		B5551A6B284DED3B00F91338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A59284DED3B00F91338 /* AppDelegate.m */; };
-		B57952FA288B8520006D07B4 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = B57952F7288B8520006D07B4 /* image.png */; };
 		B57952FB288B8520006D07B4 /* video_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = B57952F8288B8520006D07B4 /* video_cover.png */; };
 		B57952FC288B8520006D07B4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B57952F9288B8520006D07B4 /* video.mp4 */; };
 		B58214E1288E8D0C006B3C42 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58214E0288E8D0C006B3C42 /* RXIMSdk.framework */; };
@@ -27,11 +28,13 @@
 /* Begin PBXFileReference section */
 		0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXIMSdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4796242626CCE6750009629A /* RXIMSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXIMSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9E3582C8B56891365FED2F5 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "../RXIMSdkDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A9E3582C8B56891365FED2F5 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B544B72F288F8D8C0095BEE1 /* file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file.txt; sourceTree = "<group>"; };
+		B544B731288F93450095BEE1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		B544B733288FC1C40095BEE1 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 		B54D522B2884F72E00BAF2F1 /* audio.amr */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.amr; sourceTree = "<group>"; };
 		B5551A4C284DED3B00F91338 /* TestActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestActivity.m; sourceTree = "<group>"; };
 		B5551A4D284DED3B00F91338 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B5551A4E284DED3B00F91338 /* wechat_login_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat_login_image@3x.png"; sourceTree = "<group>"; };
 		B5551A4F284DED3B00F91338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5551A51284DED3B00F91338 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B5551A52284DED3B00F91338 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
@@ -43,11 +46,10 @@
 		B5551A5A284DED3B00F91338 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5551A5B284DED3B00F91338 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B5551A5C284DED3B00F91338 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		B57952F7288B8520006D07B4 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		B57952F8288B8520006D07B4 /* video_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_cover.png; sourceTree = "<group>"; };
 		B57952F9288B8520006D07B4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		B58214E0288E8D0C006B3C42 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
-		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMSdkDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +93,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B5551A4B284DED3B00F91338 /* RXIMSdkDemo */ = {
+		B544B72E288F8D0B0095BEE1 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				B57952F7288B8520006D07B4 /* image.png */,
+				B544B733288FC1C40095BEE1 /* img.png */,
+				B544B731288F93450095BEE1 /* location.png */,
+				B544B72F288F8D8C0095BEE1 /* file.txt */,
 				B57952F8288B8520006D07B4 /* video_cover.png */,
 				B57952F9288B8520006D07B4 /* video.mp4 */,
 				B54D522B2884F72E00BAF2F1 /* audio.amr */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		B5551A4B284DED3B00F91338 /* RXIMSdkDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B544B72E288F8D0B0095BEE1 /* resource */,
 				B5551A4D284DED3B00F91338 /* AppDelegate.h */,
 				B5551A59284DED3B00F91338 /* AppDelegate.m */,
 				B5551A4F284DED3B00F91338 /* Assets.xcassets */,
@@ -111,7 +123,6 @@
 				B5551A4C284DED3B00F91338 /* TestActivity.m */,
 				B5551A5B284DED3B00F91338 /* ViewController.h */,
 				B5551A51284DED3B00F91338 /* ViewController.m */,
-				B5551A4E284DED3B00F91338 /* wechat_login_image@3x.png */,
 			);
 			path = RXIMSdkDemo;
 			sourceTree = "<group>";
@@ -187,9 +198,10 @@
 				B57952FB288B8520006D07B4 /* video_cover.png in Resources */,
 				B54D522C2884F72E00BAF2F1 /* audio.amr in Resources */,
 				B5551A69284DED3B00F91338 /* Main.storyboard in Resources */,
-				B5551A63284DED3B00F91338 /* wechat_login_image@3x.png in Resources */,
+				B544B732288F93450095BEE1 /* location.png in Resources */,
 				B5551A64284DED3B00F91338 /* Assets.xcassets in Resources */,
-				B57952FA288B8520006D07B4 /* image.png in Resources */,
+				B544B734288FC1C40095BEE1 /* img.png in Resources */,
+				B544B730288F8D8C0095BEE1 /* file.txt in Resources */,
 				B57952FC288B8520006D07B4 /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

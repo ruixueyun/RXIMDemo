@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSData *file_data;
 /** 文件资源url */
 @property (nonatomic, copy) NSString *url;
+/** 本地文件路径 */
+@property(nonatomic, copy) NSString *path;
 /** 文件格式，不含"." */
 @property (nonatomic, strong) NSString *file_type;
 /** 文件大小，单位：byte */

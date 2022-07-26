@@ -30,8 +30,6 @@ typedef enum : NSUInteger {
     RXIMMessageType_Position = 8,
     /** 回复 */
     RXIMMessageType_Reply = 9,
-    /** 合并转发 */
-    RXIMMessageType_MergeTransmit = 10,
     /** 自定义 */
     RXIMMessageType_Custom = 101,
 } RXIMMessageType;

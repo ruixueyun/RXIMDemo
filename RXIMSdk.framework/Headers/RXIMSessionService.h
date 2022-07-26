@@ -111,10 +111,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 获取服务器会话列表
- * @param covId 会话id
  */
-- (void)getConversationList:(NSString * _Nonnull)covId
-          completionHandler:(void (^)(NSArray<RXIMSession *> *sessionInfoAry,RXIMError *error))completionHandler;
+- (void)getConversationList:(void (^)(NSArray<RXIMSession *> *sessionInfoAry,RXIMError *error))completionHandler;
 
 /** 本地数据库操作 */
 /**
