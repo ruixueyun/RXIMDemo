@@ -1,6 +1,0 @@
-framework module RXIMSdk {
-  umbrella header "RXIMSdk.h"
-
-  export *
-  module * { export * }
-}

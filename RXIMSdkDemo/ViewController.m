@@ -292,7 +292,7 @@ static NSString *target;
     msg.type = RXIMMessageType_Text;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
-            
+            NSLog(@"消息处理成功");
         }
     }];
 }
@@ -320,7 +320,9 @@ static NSString *target;
     [RXIMChatService sharedSDK].delegate = self;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
-            
+            if (!error) {
+                NSLog(@"消息处理成功");
+            }
         }
     }];
 }
@@ -333,6 +335,7 @@ static NSString *target;
     RXIMMsgAudioContent *audioContent = [[RXIMMsgAudioContent alloc]init];
     audioContent.duration = 3;
     audioContent.audioData = audioData;
+    audioContent.audio_type = @"amr";
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = audioContent;
     msg.conversationId = self.conversationId;
@@ -340,7 +343,9 @@ static NSString *target;
     msg.type = RXIMMessageType_Audio;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error) {
         if (!error) {
-            
+            if (!error) {
+                NSLog(@"消息处理成功");
+            }
         }
     }];
 }
@@ -362,7 +367,9 @@ static NSString *target;
     msg.type = RXIMMessageType_Position;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            
+            if (!error) {
+                NSLog(@"消息处理成功");
+            }
         }
     }];
 }
@@ -392,7 +399,9 @@ static NSString *target;
     msg.type = RXIMMessageType_Video;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            
+            if (!error) {
+                NSLog(@"消息处理成功");
+            }
         }
     }];
 }
@@ -415,7 +424,9 @@ static NSString *target;
     msg.type = RXIMMessageType_File;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            
+            if (!error) {
+                NSLog(@"消息处理成功");
+            }
         }
     }];
 }
@@ -452,20 +463,30 @@ static NSString *target;
     
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            
+            if (!error) {
+                NSLog(@"消息处理成功");
+            }
         }
     }];
 }
 #pragma mark - 发送已读消息
 - (void)sendReadMsgAction
 {
-    [[RXIMChatService sharedSDK] readMessage:self.msgObj];
+    [[RXIMChatService sharedSDK] readMessage:self.msgObj completionHandler:^(RXIMError * _Nonnull error) {
+        if (!error) {
+            NSLog(@"消息处理成功");
+        }
+    }];
 }
 
 #pragma mark - 发送撤回消息
 - (void)sendRecallMsgAction
 {
-    [[RXIMChatService sharedSDK] revokeMessage:self.msgObj];
+    [[RXIMChatService sharedSDK] revokeMessage:self.msgObj completionHandler:^(RXIMError * _Nonnull error) {
+        if (!error) {
+            NSLog(@"消息处理成功");
+        }
+    }];
 }
 #pragma mark - 获取服务器历史消息
 -(void)getSerHistoryMsgAction
@@ -477,7 +498,7 @@ static NSString *target;
 #pragma mark - 获取本地历史消息
 -(void)getLocalHistoryMsgAction
 {
-    [[RXIMChatService sharedSDK] getLocalHistoryMessageWithMsgId:nil target:target sessionType:self.covType limit:100 completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages,RXIMError *error) {
+    [[RXIMChatService sharedSDK] getLocalHistoryMessageWithMsgId:nil target:self.conversationId sessionType:self.covType limit:100 completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages,RXIMError *error) {
         if (!error) {
             NSLog(@"历史消息回执 %@",messages);
         }
@@ -652,9 +673,10 @@ static NSString *target;
 }
 
 #pragma mark - 消息发送失败回执
-- (void)sendMessageFailure:(RXIMMessage *)msgObj
+- (void)sendMessageFailure:(RXIMMessage *)msgObj error:(RXIMError *)error
 {
     NSLog(@"消息发送失败");
+    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld errMsg = %@",error.code,error.developerMessage]];
 }
 
 #pragma mark - 历史消息回执

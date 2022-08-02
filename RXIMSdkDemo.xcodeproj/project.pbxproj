@@ -22,7 +22,6 @@
 		B5551A6B284DED3B00F91338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A59284DED3B00F91338 /* AppDelegate.m */; };
 		B57952FB288B8520006D07B4 /* video_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = B57952F8288B8520006D07B4 /* video_cover.png */; };
 		B57952FC288B8520006D07B4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B57952F9288B8520006D07B4 /* video.mp4 */; };
-		B5E81C4C2890DF8A00D8337C /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E81C4B2890DF8A00D8337C /* RXIMSdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +47,6 @@
 		B5551A5C284DED3B00F91338 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		B57952F8288B8520006D07B4 /* video_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_cover.png; sourceTree = "<group>"; };
 		B57952F9288B8520006D07B4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
-		B5E81C4B2890DF8A00D8337C /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +56,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FE5C0F371AA1081C609AB6 /* Pods_RXIMSdkDemo.framework in Frameworks */,
-				B5E81C4C2890DF8A00D8337C /* RXIMSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +127,6 @@
 		EEF5AE380AC5B853B8154A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5E81C4B2890DF8A00D8337C /* RXIMSdk.framework */,
 				0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */,
 			);
 			name = Frameworks;
