@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char RXIMSdkVersionString[];
 
 
 #import <RXIMSdk/RXIMSDKManager.h>
-#import <RXIMSdk/RXIMSingleService.h>
+#import <RXIMSdk/RXIMChatService.h>
 #import <RXIMSdk/RXIMSessionService.h>
 #import <RXIMSdk/RXIMSendMessage.h>
 #import <RXIMSdk/RXIMSession.h>

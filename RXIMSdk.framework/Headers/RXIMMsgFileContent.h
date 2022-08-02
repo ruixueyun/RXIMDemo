@@ -21,8 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *path;
 /** 文件格式，不含"." */
 @property (nonatomic, strong) NSString *file_type;
-/** 文件大小，单位：byte */
-@property (nonatomic, assign) NSInteger size;
 
 @end
 

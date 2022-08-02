@@ -10,13 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum : NSUInteger {
-    /** 未知 */
-    RXSessionType_unknown = 0,
-    RXSessionType_single,
-    RXSessionType_group,
-} RXSessionType;
-
 /** 会话模型 */
 @interface RXIMSession : NSObject
 
@@ -48,7 +41,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSArray *members;
 
 /** 会话类型 */
-@property (nonatomic, assign) RXSessionType type;
+@property (nonatomic, assign) RXIMSessionType type;
 
 /** 会话状态 */
 @property (nonatomic, assign) NSInteger status;
@@ -76,10 +69,6 @@ typedef enum : NSUInteger {
 
 /** 未读消息数 */
 @property (nonatomic, assign) NSInteger redPoint;
-//
-///** 是否有人@我 */
-//@property (nonatomic,assign) BOOL isATMe;
-
 
 @end
 

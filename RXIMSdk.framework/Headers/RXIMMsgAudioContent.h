@@ -17,10 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *url;
 /** 本地语音路径 */
 @property(nonatomic, copy) NSString *path;
+/** 语音格式，不含"." */
+@property (nonatomic,copy) NSString *audio_type;
 /** 语音时长 单位：秒 */
 @property(nonatomic, assign) NSInteger duration;
-/** 语音是否被播放过 */
-@property(nonatomic, assign) BOOL isPlay;
+
 @end
 
 NS_ASSUME_NONNULL_END

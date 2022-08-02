@@ -9,6 +9,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * 消息类型
+ */
 typedef enum : NSUInteger {
     /** 未知 */
     RXIMMessageType_UnknownMt = 0,
@@ -32,8 +35,13 @@ typedef enum : NSUInteger {
     RXIMMessageType_Reply = 9,
     /** 自定义 */
     RXIMMessageType_Custom = 101,
+    /** 已读 */
+    RXIMMessageType_read = 201,
+    /** 撤回 */
+    RXIMMessageType_recall = 202,
 } RXIMMessageType;
 
+/** 会话类型 */
 typedef enum : NSUInteger {
     /** 未知 */
     RXIMSessionType_UnknownTt = 0,
@@ -41,8 +49,13 @@ typedef enum : NSUInteger {
     RXIMSessionType_single,
     /** 群聊 */
     RXIMSessionType_group,
+    /** 自定义单聊 */
+    RXIMSessionType_custom,
+    /** 频道聊天 */
+    RXIMSessionType_channel
 } RXIMSessionType;
 
+/** 消息状态 */
 typedef enum : NSUInteger {
     /** 发送失败 */
     RXIMMsgStatus_failed = 0,
@@ -52,15 +65,7 @@ typedef enum : NSUInteger {
     RXIMMsgStatus_sending = 2,
 } RXIMMsgStatus;
 
-typedef enum : NSUInteger {
-    /** 已读 */
-    RXIMMsgAttr_read = 1,
-    /** 回复 */
-    RXIMMsgAttr_recall = 2,
-    /** 删除 */
-    RXIMMsgAttr_delete = 4,
-} RXIMMsgAttr;
-
+/** 消息选项 */
 typedef enum : NSUInteger {
     /** 开启离线消息和多端同步 */
     RXIMMsgOption_enableSync = 1,
@@ -70,11 +75,7 @@ typedef enum : NSUInteger {
     RXIMMsgOption_readReceipt = 4
 } RXIMMsgOption;
 
-typedef enum : NSUInteger {
-    /** 群创建 */
-    RXGroupOptioinType_create = 1,
-} RXGroupOptioinType;
-
+/** 消息体定义 */
 @interface RXIMMessage : NSObject
 
 /** 发送人id */
@@ -128,11 +129,14 @@ typedef enum : NSUInteger {
 /** 消息内容 */
 @property (nonatomic, strong) id content;
 
-/** 当前消息的未读数。单聊时只会是0或1，0表示对方已读；群聊表示具体还有多少人未读*/
-@property (nonatomic, assign) NSInteger unreadCount;
-
-/** 用户在该消息中的接收者编号，只有大于 0 时才需要发送已读，且发送已读确认时需要发给服务器 */
+/** 用户在该消息中的接收者编号 */
 @property (nonatomic, assign) NSInteger receiverNum;
+
+/** 是否为撤回消息 */
+@property (nonatomic, assign) BOOL isRecall;
+
+/** 消息未读数 */
+@property (nonatomic, assign) NSInteger unreadCount;
 
 @end
 

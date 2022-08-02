@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "RXIMSession.h"
 #import "RXIMError.h"
-#import "RXIMSessionInfo.h"
+#import "RXIMJoinSession.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -82,20 +82,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 加入会话
- * @param covId 会话id
- * @param option 选项
- * @param ext 扩展字段
+ * @param joinSessions 加入会话数组
  */
-- (void)joinConversation:(NSString * _Nonnull)covId
-                  option:(NSInteger)option
-                     ext:(NSDictionary<NSString *,NSString *> * _Nullable)ext
-       completionHandler:(void (^)(RXIMError *error))completionHandler;
+- (void)joinConversations:(NSArray<RXIMJoinSession *> * _Nonnull)joinSessions
+        completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
  * 离开会话
- * @param covId 会话id
+ * @param covIds 会话id数组
  */
-- (void)leaveConversation:(NSString * _Nonnull)covId
+- (void)leaveConversations:(NSArray * _Nonnull)covIds
          completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
@@ -133,12 +129,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)clearRedPoint:(NSString * _Nonnull)sessionId
              complete:(void(^)(RXIMError *error))complete;
 
-/**
- * 删除单个会话
- * @param covId 会话id
- */
-- (void)deleteLocalSingleConversation:(NSString * _Nonnull)covId
-                        complete:(void(^)(RXIMError *error))complete;
 
 
 @end

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 原始图片url */
 @property (nonatomic, copy) NSString *original_url;
 /** 缩略图二进制数据 */
-//@property (nonatomic, copy) NSData *blurred_data;
+@property (nonatomic, copy) NSData *blurred_data;
 /** 缩略图url */
 @property (nonatomic, copy) NSString *thumbnail_url;
 /** 本地图片路径 */
