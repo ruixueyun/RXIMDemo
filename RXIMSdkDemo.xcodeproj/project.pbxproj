@@ -20,6 +20,7 @@
 		B5551A69284DED3B00F91338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5551A55284DED3B00F91338 /* Main.storyboard */; };
 		B5551A6A284DED3B00F91338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A58284DED3B00F91338 /* main.m */; };
 		B5551A6B284DED3B00F91338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A59284DED3B00F91338 /* AppDelegate.m */; };
+		B5573DF9289A495300DD6D36 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5573DF8289A495300DD6D36 /* RXIMSdk.framework */; };
 		B57952FB288B8520006D07B4 /* video_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = B57952F8288B8520006D07B4 /* video_cover.png */; };
 		B57952FC288B8520006D07B4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B57952F9288B8520006D07B4 /* video.mp4 */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		B5551A5A284DED3B00F91338 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5551A5B284DED3B00F91338 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B5551A5C284DED3B00F91338 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		B5573DF8289A495300DD6D36 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		B57952F8288B8520006D07B4 /* video_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_cover.png; sourceTree = "<group>"; };
 		B57952F9288B8520006D07B4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FE5C0F371AA1081C609AB6 /* Pods_RXIMSdkDemo.framework in Frameworks */,
+				B5573DF9289A495300DD6D36 /* RXIMSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +130,7 @@
 		EEF5AE380AC5B853B8154A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5573DF8289A495300DD6D36 /* RXIMSdk.framework */,
 				0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */,
 			);
 			name = Frameworks;

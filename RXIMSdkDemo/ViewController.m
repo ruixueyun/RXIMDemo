@@ -41,8 +41,7 @@ static NSString *target;
         weakself.targetId = @"testuser_9999";
         [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:weakself.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
             if (!error) {
-                [RXIMChatService sharedSDK].delegate = weakself;
-                [RXIMSessionService sharedSDK].delegate = weakself;
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
             }
         }];
     }else if([userPhoneName isEqualToString:@"iPhone (2)"]){
@@ -50,8 +49,7 @@ static NSString *target;
         weakself.targetId = @"testuser_9999";
         [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:weakself.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
             if (!error) {
-                [RXIMChatService sharedSDK].delegate = weakself;
-                [RXIMSessionService sharedSDK].delegate = weakself;
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
             }
         }];
     }else{
@@ -59,16 +57,17 @@ static NSString *target;
         weakself.targetId = @"testuser_8888";
         [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:weakself.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
             if (!error) {
-                [RXIMChatService sharedSDK].delegate = weakself;
-                [RXIMSessionService sharedSDK].delegate = weakself;
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
             }
         }];
     }
-    self.conversationId = @"$2$test88889999";
-//    self.conversationId = @"$4$test8";
+    self.conversationId = @"$2$test888899999";
     self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
+    
+    [RXIMChatService sharedSDK].delegate = self;
+    [RXIMSessionService sharedSDK].delegate = self;
 }
 
 - (void)setUI
@@ -265,7 +264,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test88889999";
+    self.conversationId = @"$2$test888899999";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
