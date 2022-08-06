@@ -61,7 +61,7 @@ static NSString *target;
             }
         }];
     }
-    self.conversationId = @"$2$test98";
+    self.conversationId = @"$2$test998";
     self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
@@ -258,7 +258,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test98";
+    self.conversationId = @"$2$test998";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
