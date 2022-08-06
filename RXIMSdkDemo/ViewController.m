@@ -61,7 +61,7 @@ static NSString *target;
             }
         }];
     }
-    self.conversationId = @"$2$test888899999";
+    self.conversationId = @"$2$test98";
     self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
@@ -238,12 +238,6 @@ static NSString *target;
     [getConversation setBackgroundColor:[UIColor lightGrayColor]];
     [getConversation addTarget:self action:@selector(getConversationWithCovId) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:getConversation];
-    
-    UIButton *deleteLocalConv = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+560, 150, 30)];
-    [deleteLocalConv setTitle:@"删除本地单个会话" forState:UIControlStateNormal];
-    [deleteLocalConv setBackgroundColor:[UIColor lightGrayColor]];
-    [deleteLocalConv addTarget:self action:@selector(deleteLocalSingleConv) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:deleteLocalConv];
 }
 
 #pragma mark - ====== 消息操作 ======
@@ -264,7 +258,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test888899999";
+    self.conversationId = @"$2$test98";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
@@ -421,6 +415,7 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_File;
+    msg.option = 0;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             if (!error) {
@@ -619,7 +614,10 @@ static NSString *target;
 -(void)getConvListAction
 {
     NSArray *convList = [[RXIMSessionService sharedSDK] getLocalConversationList];
-    NSLog(@"本地会话列表 %@",convList);
+    NSLog(@"本地会话列表");
+    for (RXIMSession *session in convList) {
+        NSLog(@"会话id = %@",session.conversation_id);
+    }
 }
 
 #pragma mark - 清空会话未读消息数
@@ -639,18 +637,6 @@ static NSString *target;
 {
     RXIMSession *session = [[RXIMSessionService sharedSDK] getConversationWithCovId:self.conversationId];
     NSLog(@"session = %@",session);
-}
-
-#pragma mark - 删除本地单个会话
--(void)deleteLocalSingleConv
-{
-//    [[RXIMSessionService sharedSDK] deleteLocalSingleConversation:self.conversationId complete:^(RXIMError * _Nonnull error) {
-//        if (!error) {
-//            [SVProgressHUD showSuccessWithStatus:@"删除成功"];
-//        }else{
-//            [SVProgressHUD showErrorWithStatus:@"删除失败"];
-//        }
-//    }];
 }
 
 #pragma mark -- <RXIMMessageDelegate>

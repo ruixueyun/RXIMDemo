@@ -3,7 +3,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'RXIMSdkDemo' do
     use_frameworks!
     pod 'Protobuf'
-    pod 'AFNetworking'
+#    pod 'AFNetworking'
+    pod 'RXNetworkingKit'
     pod 'YYCache'
     pod 'YYModel'
     pod 'MJExtension'
