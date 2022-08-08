@@ -15,7 +15,7 @@
 // - 设备屏幕高
 #define kScreenHeight         [UIScreen mainScreen].bounds.size.height
 
-#define viewHeight 130
+#define viewHeight 170
 
 static NSString *target;
 
@@ -61,7 +61,7 @@ static NSString *target;
             }
         }];
     }
-    self.conversationId = @"$2$test998";
+    self.conversationId = @"$2$test9988";
     self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
@@ -81,27 +81,33 @@ static NSString *target;
     [self.covIdLab setTextColor:[UIColor greenColor]];
     [self.view addSubview:self.covIdLab];
     
-    UILabel *chatLab = [[UILabel alloc]initWithFrame:CGRectMake(10, viewHeight, kScreenWidth-20, 30)];
+    UILabel *chatLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 130, kScreenWidth-20, 30)];
     [chatLab setText:@"======= 聊天操作 ======="];
     [self.view addSubview:chatLab];
     
-    UIButton *sendSingle = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+40, 100, 30)];
+    UIButton *sendSingle = [[UIButton alloc] initWithFrame:CGRectMake(10, 170, 100, 30)];
     [sendSingle setTitle:@"切换单聊" forState:UIControlStateNormal];
     [sendSingle setBackgroundColor:[UIColor lightGrayColor]];
     [sendSingle addTarget:self action:@selector(sendSingleAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sendSingle];
     
-    UIButton *sendGroup = [[UIButton alloc] initWithFrame:CGRectMake(130, viewHeight+40, 100, 30)];
+    UIButton *sendGroup = [[UIButton alloc] initWithFrame:CGRectMake(130, 170, 100, 30)];
     [sendGroup setTitle:@"切换群聊" forState:UIControlStateNormal];
     [sendGroup setBackgroundColor:[UIColor lightGrayColor]];
     [sendGroup addTarget:self action:@selector(sendGroupAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sendGroup];
     
-    UIButton *sendChannel = [[UIButton alloc] initWithFrame:CGRectMake(240, viewHeight+40, 100, 30)];
+    UIButton *sendChannel = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 100, 30)];
     [sendChannel setTitle:@"切换渠道" forState:UIControlStateNormal];
     [sendChannel setBackgroundColor:[UIColor lightGrayColor]];
     [sendChannel addTarget:self action:@selector(sendChannelAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sendChannel];
+    
+    UIButton *sendCustom = [[UIButton alloc] initWithFrame:CGRectMake(10, 210, 150, 30)];
+    [sendCustom setTitle:@"切换自定义单聊" forState:UIControlStateNormal];
+    [sendCustom setBackgroundColor:[UIColor lightGrayColor]];
+    [sendCustom addTarget:self action:@selector(sendCustomAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sendCustom];
     
     UIButton *getHistoryMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+80, 150, 30)];
     [getHistoryMsg setTitle:@"获取本地历史消息" forState:UIControlStateNormal];
@@ -238,6 +244,12 @@ static NSString *target;
     [getConversation setBackgroundColor:[UIColor lightGrayColor]];
     [getConversation addTarget:self action:@selector(getConversationWithCovId) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:getConversation];
+    
+    UIButton *getConvLastMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+560, 150, 30)];
+    [getConvLastMsg setTitle:@"获取会话最后一条消息" forState:UIControlStateNormal];
+    [getConvLastMsg setBackgroundColor:[UIColor lightGrayColor]];
+    [getConvLastMsg addTarget:self action:@selector(getConvLastMsg) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:getConvLastMsg];
 }
 
 #pragma mark - ====== 消息操作 ======
@@ -258,7 +270,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test998";
+    self.conversationId = @"$2$test9988";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
@@ -273,6 +285,15 @@ static NSString *target;
     [SVProgressHUD showSuccessWithStatus:@"切换渠道成功"];
 }
 
+#pragma mark - 切换自定义单聊
+-(void)sendCustomAction
+{
+    self.conversationId = @"$3$test8";
+    self.covType = RXIMSessionType_custom;
+    [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
+    [SVProgressHUD showSuccessWithStatus:@"切换自定义单聊成功"];
+}
+
 #pragma mark - 发送文本消息
 - (void)sendTextMsgAction
 {
@@ -283,6 +304,8 @@ static NSString *target;
     msg.content = textContent;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Text;
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -310,6 +333,8 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Image;
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [RXIMChatService sharedSDK].delegate = self;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
@@ -334,6 +359,8 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Audio;
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error) {
         if (!error) {
             if (!error) {
@@ -358,6 +385,8 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Position;
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             if (!error) {
@@ -390,6 +419,8 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Video;
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             if (!error) {
@@ -415,7 +446,8 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_File;
-    msg.option = 0;
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             if (!error) {
@@ -454,7 +486,8 @@ static NSString *target;
     msg.conversationId = self.conversationId;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Reply;
-    
+    msg.option = 7;
+    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             if (!error) {
@@ -497,6 +530,23 @@ static NSString *target;
             NSLog(@"历史消息回执 %@",messages);
         }
     }];
+}
+
+#pragma mark - 获取接收人id列表
+-(NSArray *)getReceiveAryWithCovType
+{
+    NSArray *receiveAry = nil;
+    switch (self.covType) {
+        case RXIMSessionType_single:
+        case RXIMSessionType_group:
+        case RXIMSessionType_channel:
+            break;
+        case RXIMSessionType_custom:
+            receiveAry = @[self.targetId];
+        default:
+            break;
+    }
+    return receiveAry;
 }
 
 #pragma mark - ======== 会话操作 ======
@@ -637,6 +687,13 @@ static NSString *target;
 {
     RXIMSession *session = [[RXIMSessionService sharedSDK] getConversationWithCovId:self.conversationId];
     NSLog(@"session = %@",session);
+}
+
+#pragma mark - 获取会话最后一条消息
+-(void)getConvLastMsg
+{
+    RXIMMessage *msg = [[RXIMSessionService sharedSDK] getLastMsgWithCovId:self.conversationId];
+    NSLog(@"%@",msg.msgId);
 }
 
 #pragma mark -- <RXIMMessageDelegate>

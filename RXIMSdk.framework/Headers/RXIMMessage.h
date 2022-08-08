@@ -84,7 +84,7 @@ typedef enum : NSUInteger {
 /** 会话id */
 @property(nonatomic, copy) NSString *conversationId;
 
-/** 接收人列表。对于群聊标@列表*/
+/** 接收人列表，单聊必须为空；群聊表示 @ 用户列表；自定义单聊表示实际接收人 UserID 清单；*/
 @property (nonatomic, copy) NSMutableArray *receiversArray;
 
 /** 会话类型 */
@@ -102,7 +102,7 @@ typedef enum : NSUInteger {
 /** 消息选项 RXIMMsgOption 位运算组合  */
 @property (nonatomic, assign) NSInteger option;
 
-/** 子消息类型 */
+/** 子消息类型 type == RXIMMessageType_Custom 有效 设置需大于100，100以下供sdk内部使用 */
 @property(nonatomic, assign) NSInteger subType;
 
 /** 发送人客户端类型 */

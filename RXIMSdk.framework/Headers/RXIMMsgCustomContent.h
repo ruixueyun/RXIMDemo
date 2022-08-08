@@ -11,9 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RXIMMsgCustomContent : NSObject
 
-/** 类型 type设置需大于100，100以下供sdk内部使用 */
-@property (nonatomic,assign) NSInteger type;
-
 /** 数据 */
 @property (nonatomic, copy) NSDictionary * _Nullable data;
 

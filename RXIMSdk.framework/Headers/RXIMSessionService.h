@@ -121,6 +121,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (RXIMSession *)getConversationWithCovId:(NSString * _Nonnull)covId;
 
+
+/**
+ * 获取会话最后一条消息
+ * @param covId 会话id
+ */
+-(RXIMMessage *)getLastMsgWithCovId:(NSString * _Nonnull)covId;
+
 /**
  * 清空会话的未读消息数
  * @param sessionId 会话id

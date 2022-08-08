@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/RXIMMessage.h</key>
 		<data>
-		PKnn7PXI8MyIGECgpnQA9UZmZHk=
+		l8n3+LpJDMyYSSYsFeAaK41HoZw=
 		</data>
 		<key>Headers/RXIMMsgAudioContent.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/RXIMMsgCustomContent.h</key>
 		<data>
-		atNLScZYRUnNS2vAMzgVVRVAetA=
+		khwpDBPbnQ7OI3CQ3/LRYav30hQ=
 		</data>
 		<key>Headers/RXIMMsgFaceContent.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/RXIMSendMessage.h</key>
 		<data>
-		zFsxr7xyi/yZ8etd/62EjsgoIpY=
+		wg7nEeLFnY9ZPnTBu1Hof86fde0=
 		</data>
 		<key>Headers/RXIMSession.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/RXIMSessionService.h</key>
 		<data>
-		TPgkNVzglljchI+7xCn1uu9rVVU=
+		8o/cvTB6oXUegLvQgKsjf/ght7I=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -154,11 +154,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PKnn7PXI8MyIGECgpnQA9UZmZHk=
+			l8n3+LpJDMyYSSYsFeAaK41HoZw=
 			</data>
 			<key>hash2</key>
 			<data>
-			tHLAWk78OvfNA59blfxSW2WbBmNKOGLhSDeT7jAD7no=
+			d5OR2U4VBNP/2R+dXdcTkmsxrmiPYUVdiCUFiJrILgI=
 			</data>
 		</dict>
 		<key>Headers/RXIMMsgAudioContent.h</key>
@@ -176,11 +176,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			atNLScZYRUnNS2vAMzgVVRVAetA=
+			khwpDBPbnQ7OI3CQ3/LRYav30hQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ss4Yljb4D0Cq4gRlHzp+I8LQWHFPzRQ8BhXWTT7pddY=
+			FUg8OjWy5wBbCTaMWCkk9pX9ylceFCiSdeicRkhdtgQ=
 			</data>
 		</dict>
 		<key>Headers/RXIMMsgFaceContent.h</key>
@@ -286,11 +286,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zFsxr7xyi/yZ8etd/62EjsgoIpY=
+			wg7nEeLFnY9ZPnTBu1Hof86fde0=
 			</data>
 			<key>hash2</key>
 			<data>
-			KVjgfn+fKFHe67uHp6k31edo4BRXYv4J/gEozbo3Pzs=
+			bgZ1UGLRJLKKZqZeYdk7zonEoP9+1+8MYf1ItTNwVdw=
 			</data>
 		</dict>
 		<key>Headers/RXIMSession.h</key>
@@ -308,11 +308,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TPgkNVzglljchI+7xCn1uu9rVVU=
+			8o/cvTB6oXUegLvQgKsjf/ght7I=
 			</data>
 			<key>hash2</key>
 			<data>
-			63ZppE2DV43Jc46KVr6w7fNGjOj1C9mzNRamupubR34=
+			PaQ1whOHg6NATpCY4ASY1mKcR8ix2cz5Coynd0w5uzg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

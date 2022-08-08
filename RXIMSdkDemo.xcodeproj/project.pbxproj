@@ -28,9 +28,7 @@
 /* Begin PBXFileReference section */
 		0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXIMSdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4796242626CCE6750009629A /* RXIMSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXIMSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9E3582C8B56891365FED2F5 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "../RXIMSDKDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B52EFFC8289E08F9002FC672 /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
-		B52EFFCA289E09B2002FC672 /* libobjc.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.A.tbd; path = usr/lib/libobjc.A.tbd; sourceTree = SDKROOT; };
+		A9E3582C8B56891365FED2F5 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B544B72F288F8D8C0095BEE1 /* file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file.txt; sourceTree = "<group>"; };
 		B544B731288F93450095BEE1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		B544B733288FC1C40095BEE1 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
@@ -51,7 +49,7 @@
 		B5573DF8289A495300DD6D36 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		B57952F8288B8520006D07B4 /* video_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_cover.png; sourceTree = "<group>"; };
 		B57952F9288B8520006D07B4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
-		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMSDKDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +130,6 @@
 		EEF5AE380AC5B853B8154A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B52EFFCA289E09B2002FC672 /* libobjc.A.tbd */,
-				B52EFFC8289E08F9002FC672 /* libobjc.tbd */,
 				B5573DF8289A495300DD6D36 /* RXIMSdk.framework */,
 				0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */,
 			);
