@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *sender;
 /** 消息内容 */
 @property (nonatomic, strong) id content;
-/** 扩展字段 */
-//@property (nonatomic, copy) NSDictionary<NSString *,NSString *> *ext;
 /** 服务端唯一消息号 */
 @property (nonatomic, copy) NSString *msgId;
 /** 引用消息的毫秒时间戳 */

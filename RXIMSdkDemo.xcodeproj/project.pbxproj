@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A1FE5C0F371AA1081C609AB6 /* Pods_RXIMSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */; };
+		B539E5CD28AB82D300810EE4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B539E5CC28AB82D300810EE4 /* CoreTelephony.framework */; };
+		B539E5D128AB83E600810EE4 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B539E5D028AB83E600810EE4 /* RXIMSdk.framework */; };
 		B544B730288F8D8C0095BEE1 /* file.txt in Resources */ = {isa = PBXBuildFile; fileRef = B544B72F288F8D8C0095BEE1 /* file.txt */; };
 		B544B732288F93450095BEE1 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = B544B731288F93450095BEE1 /* location.png */; };
 		B544B734288FC1C40095BEE1 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = B544B733288FC1C40095BEE1 /* img.png */; };
@@ -20,7 +22,6 @@
 		B5551A69284DED3B00F91338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5551A55284DED3B00F91338 /* Main.storyboard */; };
 		B5551A6A284DED3B00F91338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A58284DED3B00F91338 /* main.m */; };
 		B5551A6B284DED3B00F91338 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5551A59284DED3B00F91338 /* AppDelegate.m */; };
-		B5573DF9289A495300DD6D36 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5573DF8289A495300DD6D36 /* RXIMSdk.framework */; };
 		B57952FB288B8520006D07B4 /* video_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = B57952F8288B8520006D07B4 /* video_cover.png */; };
 		B57952FC288B8520006D07B4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B57952F9288B8520006D07B4 /* video.mp4 */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,8 @@
 		0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXIMSdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4796242626CCE6750009629A /* RXIMSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXIMSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E3582C8B56891365FED2F5 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B539E5CC28AB82D300810EE4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B539E5D028AB83E600810EE4 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		B544B72F288F8D8C0095BEE1 /* file.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file.txt; sourceTree = "<group>"; };
 		B544B731288F93450095BEE1 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		B544B733288FC1C40095BEE1 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
@@ -46,7 +49,6 @@
 		B5551A5A284DED3B00F91338 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5551A5B284DED3B00F91338 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B5551A5C284DED3B00F91338 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		B5573DF8289A495300DD6D36 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		B57952F8288B8520006D07B4 /* video_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_cover.png; sourceTree = "<group>"; };
 		B57952F9288B8520006D07B4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "../RXIMDemo/Pods/Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,8 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B539E5D128AB83E600810EE4 /* RXIMSdk.framework in Frameworks */,
+				B539E5CD28AB82D300810EE4 /* CoreTelephony.framework in Frameworks */,
 				A1FE5C0F371AA1081C609AB6 /* Pods_RXIMSdkDemo.framework in Frameworks */,
-				B5573DF9289A495300DD6D36 /* RXIMSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +133,8 @@
 		EEF5AE380AC5B853B8154A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5573DF8289A495300DD6D36 /* RXIMSdk.framework */,
+				B539E5D028AB83E600810EE4 /* RXIMSdk.framework */,
+				B539E5CC28AB82D300810EE4 /* CoreTelephony.framework */,
 				0501EA0ADBCDD76666BF6C2D /* Pods_RXIMSdkDemo.framework */,
 			);
 			name = Frameworks;
@@ -164,7 +168,7 @@
 		4796241E26CCE6750009629A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					4796242526CCE6750009629A = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -403,10 +407,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5B6DA3F40B7059531DC9715 /* Pods-RXIMSdkDemo.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					x86_64,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -417,7 +417,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RXIMSdkDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,10 +437,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9E3582C8B56891365FED2F5 /* Pods-RXIMSdkDemo.release.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					x86_64,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -451,7 +447,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = RXIMSdkDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

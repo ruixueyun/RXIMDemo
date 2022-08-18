@@ -22,10 +22,20 @@ NS_ASSUME_NONNULL_BEGIN
  * @param productId 产品id
  * @param channelId 渠道id
  * @param cpId 产品cpid
+ * @param baseUrl 服务器域名
+ * @param ossUrl oss域名
+ * @param ossEndpoint oss endpoint
+ * @param ossBucketName oss bucketName
  */
 - (void)initWithProductId:(NSString * _Nonnull)productId
-            channelId:(NSString * _Nonnull)channelId
-                 cpid:(NSInteger)cpId;
+                channelId:(NSString * _Nonnull)channelId
+                     cpid:(NSInteger)cpId
+                  baseUrl:(NSString * _Nonnull)baseUrl
+                   ossUrl:(NSString * _Nullable)ossUrl
+              ossEndpoint:(NSString * _Nullable)ossEndpoint
+            ossBucketName:(NSString * _Nullable)ossBucketName;
+
+/***/
 
 /**
  * 登陆IM
@@ -42,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)logout;
 
 /**
- * 设置数据库的基地址
+ * 设置数据库的基地址(非必须)
  */
 - (void)setDBBasePath:(NSString * _Nullable)path;
 

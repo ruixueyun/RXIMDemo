@@ -102,7 +102,7 @@ typedef enum : NSUInteger {
 /** 消息选项 RXIMMsgOption 位运算组合  */
 @property (nonatomic, assign) NSInteger option;
 
-/** 子消息类型 type == RXIMMessageType_Custom 有效 设置需大于100，100以下供sdk内部使用 */
+/** 子消息类型 */
 @property(nonatomic, assign) NSInteger subType;
 
 /** 发送人客户端类型 */

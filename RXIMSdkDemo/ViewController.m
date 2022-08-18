@@ -15,7 +15,7 @@
 // - 设备屏幕高
 #define kScreenHeight         [UIScreen mainScreen].bounds.size.height
 
-#define viewHeight 170
+#define viewHeight 100
 
 static NSString *target;
 
@@ -33,31 +33,36 @@ static NSString *target;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000];
+    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 baseUrl:@"https://ruixue.weiletest.com" ossUrl:@"http://youle.jixiangtest.com" ossEndpoint:@"https://oss-cn-beijing.aliyuncs.com" ossBucketName:@"youleims"];
     NSString *userPhoneName = [[UIDevice currentDevice] name];
-    __weak typeof(self) weakself = self;
     if ([userPhoneName isEqualToString:@"陈汉的iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone1"]) {
-        weakself.userId = @"testuser_7777";
-        weakself.targetId = @"testuser_9999";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:weakself.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
+        self.userId = @"testuser_9999";
+        self.targetId = @"testuser_8888";
+        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
             if (!error) {
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"登录失败"];
             }
         }];
     }else if([userPhoneName isEqualToString:@"iPhone (2)"]){
-        weakself.userId = @"testuser_8888";
-        weakself.targetId = @"testuser_9999";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:weakself.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
+        self.userId = @"testuser_8888";
+        self.targetId = @"testuser_7777";
+        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
             if (!error) {
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"登录失败"];
             }
         }];
     }else{
-        weakself.userId = @"testuser_9999";
-        weakself.targetId = @"testuser_8888";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:weakself.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
+        self.userId = @"testuser_7777";
+        self.targetId = @"testuser_8888";
+        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
             if (!error) {
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"登录失败"];
             }
         }];
     }
@@ -72,184 +77,190 @@ static NSString *target;
 
 - (void)setUI
 {
-//    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-//    [scrollView setContentSize:CGSizeMake(kScreenWidth, kScreenHeight)];
-//    [self.view addSubview:scrollView];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    [scrollView setContentSize:CGSizeMake(kScreenWidth, kScreenHeight)];
+    [self.view addSubview:scrollView];
     
-    self.covIdLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, kScreenWidth-20, 30)];
+    self.covIdLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 30, kScreenWidth-20, 30)];
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [self.covIdLab setTextColor:[UIColor greenColor]];
-    [self.view addSubview:self.covIdLab];
+    [scrollView addSubview:self.covIdLab];
     
-    UILabel *chatLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 130, kScreenWidth-20, 30)];
+    UILabel *chatLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 60, kScreenWidth-20, 30)];
     [chatLab setText:@"======= 聊天操作 ======="];
-    [self.view addSubview:chatLab];
+    [scrollView addSubview:chatLab];
     
-    UIButton *sendSingle = [[UIButton alloc] initWithFrame:CGRectMake(10, 170, 100, 30)];
+    UIButton *sendSingle = [[UIButton alloc] initWithFrame:CGRectMake(10, 100, 100, 30)];
     [sendSingle setTitle:@"切换单聊" forState:UIControlStateNormal];
     [sendSingle setBackgroundColor:[UIColor lightGrayColor]];
     [sendSingle addTarget:self action:@selector(sendSingleAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendSingle];
+    [scrollView addSubview:sendSingle];
     
-    UIButton *sendGroup = [[UIButton alloc] initWithFrame:CGRectMake(130, 170, 100, 30)];
+    UIButton *sendGroup = [[UIButton alloc] initWithFrame:CGRectMake(130, 100, 100, 30)];
     [sendGroup setTitle:@"切换群聊" forState:UIControlStateNormal];
     [sendGroup setBackgroundColor:[UIColor lightGrayColor]];
     [sendGroup addTarget:self action:@selector(sendGroupAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendGroup];
+    [scrollView addSubview:sendGroup];
     
-    UIButton *sendChannel = [[UIButton alloc] initWithFrame:CGRectMake(240, 170, 100, 30)];
+    UIButton *sendChannel = [[UIButton alloc] initWithFrame:CGRectMake(240, 100, 100, 30)];
     [sendChannel setTitle:@"切换渠道" forState:UIControlStateNormal];
     [sendChannel setBackgroundColor:[UIColor lightGrayColor]];
     [sendChannel addTarget:self action:@selector(sendChannelAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendChannel];
+    [scrollView addSubview:sendChannel];
     
-    UIButton *sendCustom = [[UIButton alloc] initWithFrame:CGRectMake(10, 210, 150, 30)];
+    UIButton *sendCustom = [[UIButton alloc] initWithFrame:CGRectMake(10, 140, 150, 30)];
     [sendCustom setTitle:@"切换自定义单聊" forState:UIControlStateNormal];
     [sendCustom setBackgroundColor:[UIColor lightGrayColor]];
     [sendCustom addTarget:self action:@selector(sendCustomAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendCustom];
+    [scrollView addSubview:sendCustom];
     
     UIButton *getHistoryMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+80, 150, 30)];
     [getHistoryMsg setTitle:@"获取本地历史消息" forState:UIControlStateNormal];
     [getHistoryMsg setBackgroundColor:[UIColor lightGrayColor]];
     [getHistoryMsg addTarget:self action:@selector(getLocalHistoryMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getHistoryMsg];
+    [scrollView addSubview:getHistoryMsg];
     
     UIButton *getSerHistoryMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+80, 150, 30)];
     [getSerHistoryMsg setTitle:@"获取服务器历史消息" forState:UIControlStateNormal];
     [getSerHistoryMsg setBackgroundColor:[UIColor lightGrayColor]];
     [getSerHistoryMsg addTarget:self action:@selector(getSerHistoryMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getSerHistoryMsg];
+    [scrollView addSubview:getSerHistoryMsg];
     
     UIButton *sendTextMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+120, 150, 30)];
     [sendTextMsg setTitle:@"发送文本消息" forState:UIControlStateNormal];
     [sendTextMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendTextMsg addTarget:self action:@selector(sendTextMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendTextMsg];
+    [scrollView addSubview:sendTextMsg];
     
     UIButton *sendImgMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+120, 150, 30)];
     [sendImgMsg setTitle:@"发送图片消息" forState:UIControlStateNormal];
     [sendImgMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendImgMsg addTarget:self action:@selector(sendImgMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendImgMsg];
+    [scrollView addSubview:sendImgMsg];
     
     UIButton *sendAudioMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+160, 150, 30)];
     [sendAudioMsg setTitle:@"发送语音消息" forState:UIControlStateNormal];
     [sendAudioMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendAudioMsg addTarget:self action:@selector(sendAudioMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendAudioMsg];
+    [scrollView addSubview:sendAudioMsg];
     
     UIButton *sendLocationMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+160, 150, 30)];
     [sendLocationMsg setTitle:@"发送位置消息" forState:UIControlStateNormal];
     [sendLocationMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendLocationMsg addTarget:self action:@selector(sendLocationMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendLocationMsg];
+    [scrollView addSubview:sendLocationMsg];
     
     UIButton *sendVideoMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+200, 150, 30)];
     [sendVideoMsg setTitle:@"发送视频消息" forState:UIControlStateNormal];
     [sendVideoMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendVideoMsg addTarget:self action:@selector(sendVideoMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendVideoMsg];
+    [scrollView addSubview:sendVideoMsg];
     
     UIButton *sendFileMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+200, 150, 30)];
     [sendFileMsg setTitle:@"发送文件消息" forState:UIControlStateNormal];
     [sendFileMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendFileMsg addTarget:self action:@selector(sendFileMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendFileMsg];
+    [scrollView addSubview:sendFileMsg];
     
     UIButton *sendReplyMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+240, 150, 30)];
     [sendReplyMsg setTitle:@"发送回复消息" forState:UIControlStateNormal];
     [sendReplyMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendReplyMsg addTarget:self action:@selector(sendReplyMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendReplyMsg];
+    [scrollView addSubview:sendReplyMsg];
     
     UIButton *sendReadMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+240, 150, 30)];
     [sendReadMsg setTitle:@"发送消息已读" forState:UIControlStateNormal];
     [sendReadMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendReadMsg addTarget:self action:@selector(sendReadMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendReadMsg];
+    [scrollView addSubview:sendReadMsg];
     
     UIButton *sendRecallMsg = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+280, 150, 30)];
     [sendRecallMsg setTitle:@"发送撤回消息" forState:UIControlStateNormal];
     [sendRecallMsg setBackgroundColor:[UIColor lightGrayColor]];
     [sendRecallMsg addTarget:self action:@selector(sendRecallMsgAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sendRecallMsg];
+    [scrollView addSubview:sendRecallMsg];
+    
+    UIButton *forwardMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+280, 150, 30)];
+    [forwardMsg setTitle:@"转发消息" forState:UIControlStateNormal];
+    [forwardMsg setBackgroundColor:[UIColor lightGrayColor]];
+    [forwardMsg addTarget:self action:@selector(forwardMsgMsgAction) forControlEvents:UIControlEventTouchUpInside];
+    [scrollView addSubview:forwardMsg];
     
     UILabel *sessionLab = [[UILabel alloc]initWithFrame:CGRectMake(10, viewHeight+320, kScreenWidth-20, 30)];
     [sessionLab setText:@"======= 会话操作 ======="];
-    [self.view addSubview:sessionLab];
+    [scrollView addSubview:sessionLab];
     
     UIButton *creatConv = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+360, 150, 30)];
     [creatConv setTitle:@"创建会话" forState:UIControlStateNormal];
     [creatConv setBackgroundColor:[UIColor lightGrayColor]];
     [creatConv addTarget:self action:@selector(creatConvAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:creatConv];
+    [scrollView addSubview:creatConv];
     
     UIButton *deleteConv = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+360, 150, 30)];
     [deleteConv setTitle:@"删除会话" forState:UIControlStateNormal];
     [deleteConv setBackgroundColor:[UIColor lightGrayColor]];
     [deleteConv addTarget:self action:@selector(deleteConvAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:deleteConv];
+    [scrollView addSubview:deleteConv];
     
     UIButton *updateConvInfo = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+400, 150, 30)];
     [updateConvInfo setTitle:@"更新会话数据" forState:UIControlStateNormal];
     [updateConvInfo setBackgroundColor:[UIColor lightGrayColor]];
     [updateConvInfo addTarget:self action:@selector(updateConvInfoAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:updateConvInfo];
+    [scrollView addSubview:updateConvInfo];
     
     UIButton *getConvInfo = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+400, 150, 30)];
     [getConvInfo setTitle:@"获取会话信息" forState:UIControlStateNormal];
     [getConvInfo setBackgroundColor:[UIColor lightGrayColor]];
     [getConvInfo addTarget:self action:@selector(getConvInfoAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getConvInfo];
+    [scrollView addSubview:getConvInfo];
     
     UIButton *joinConv = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+440, 150, 30)];
     [joinConv setTitle:@"加入会话" forState:UIControlStateNormal];
     [joinConv setBackgroundColor:[UIColor lightGrayColor]];
     [joinConv addTarget:self action:@selector(joinConvAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:joinConv];
+    [scrollView addSubview:joinConv];
     
     UIButton *leaveConv = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+440, 150, 30)];
     [leaveConv setTitle:@"离开会话" forState:UIControlStateNormal];
     [leaveConv setBackgroundColor:[UIColor lightGrayColor]];
     [leaveConv addTarget:self action:@selector(leaveConvAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:leaveConv];
+    [scrollView addSubview:leaveConv];
     
     UIButton *updateUserInfoConv = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+480, 150, 30)];
     [updateUserInfoConv setTitle:@"更新用户在会话中信息" forState:UIControlStateNormal];
     [updateUserInfoConv setBackgroundColor:[UIColor lightGrayColor]];
     [updateUserInfoConv addTarget:self action:@selector(updateUserInfoConvAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:updateUserInfoConv];
+    [scrollView addSubview:updateUserInfoConv];
     
     UIButton *getConvList = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+480, 150, 30)];
     [getConvList setTitle:@"获取服务器会话列表" forState:UIControlStateNormal];
     [getConvList setBackgroundColor:[UIColor lightGrayColor]];
     [getConvList addTarget:self action:@selector(getServerSessionList) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getConvList];
+    [scrollView addSubview:getConvList];
     
     UIButton *sessions_ser = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+520, 150, 30)];
     [sessions_ser setTitle:@"获取本地会话列表" forState:UIControlStateNormal];
     [sessions_ser setBackgroundColor:[UIColor lightGrayColor]];
     [sessions_ser addTarget:self action:@selector(getConvListAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:sessions_ser];
+    [scrollView addSubview:sessions_ser];
     
     UIButton *clearUnreadCount = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+520, 150, 30)];
     [clearUnreadCount setTitle:@"清空会话未读消息数" forState:UIControlStateNormal];
     [clearUnreadCount setBackgroundColor:[UIColor lightGrayColor]];
     [clearUnreadCount addTarget:self action:@selector(clearUnreadCount) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:clearUnreadCount];
+    [scrollView addSubview:clearUnreadCount];
     
     UIButton *getConversation = [[UIButton alloc] initWithFrame:CGRectMake(10, viewHeight+560, 150, 30)];
     [getConversation setTitle:@"根据会话id获取会话" forState:UIControlStateNormal];
     [getConversation setBackgroundColor:[UIColor lightGrayColor]];
     [getConversation addTarget:self action:@selector(getConversationWithCovId) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getConversation];
+    [scrollView addSubview:getConversation];
     
     UIButton *getConvLastMsg = [[UIButton alloc] initWithFrame:CGRectMake(180, viewHeight+560, 150, 30)];
     [getConvLastMsg setTitle:@"获取会话最后一条消息" forState:UIControlStateNormal];
     [getConvLastMsg setBackgroundColor:[UIColor lightGrayColor]];
     [getConvLastMsg addTarget:self action:@selector(getConvLastMsg) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:getConvLastMsg];
+    [scrollView addSubview:getConvLastMsg];
 }
 
 #pragma mark - ====== 消息操作 ======
@@ -305,10 +316,12 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Text;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -334,13 +347,13 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Image;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [RXIMChatService sharedSDK].delegate = self;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
-            if (!error) {
-                NSLog(@"消息处理成功");
-            }
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -360,12 +373,12 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Audio;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error) {
         if (!error) {
-            if (!error) {
-                NSLog(@"消息处理成功");
-            }
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -386,12 +399,12 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Position;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            if (!error) {
-                NSLog(@"消息处理成功");
-            }
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -420,12 +433,12 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Video;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            if (!error) {
-                NSLog(@"消息处理成功");
-            }
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -447,12 +460,12 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_File;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            if (!error) {
-                NSLog(@"消息处理成功");
-            }
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -487,12 +500,12 @@ static NSString *target;
     msg.covType = self.covType;
     msg.type = RXIMMessageType_Reply;
     msg.option = 7;
-    msg.receiversArray = [[self getReceiveAryWithCovType] mutableCopy];
+    msg.receiversArray = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
-            if (!error) {
-                NSLog(@"消息处理成功");
-            }
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -502,6 +515,8 @@ static NSString *target;
     [[RXIMChatService sharedSDK] readMessage:self.msgObj completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
@@ -512,9 +527,24 @@ static NSString *target;
     [[RXIMChatService sharedSDK] revokeMessage:self.msgObj completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
         }
     }];
 }
+
+#pragma mark - 转发消息
+-(void)forwardMsgMsgAction
+{
+    [[RXIMChatService sharedSDK] forwardMessage:@[self.msgObj.msgId] receives:@[self.conversationId] ext:@[] completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages, RXIMError * _Nonnull error) {
+        if (!error) {
+            NSLog(@"消息处理成功");
+        }else{
+            [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"code = %ld,errMsg = %@",error.code,error.developerMessage]];
+        }
+    }];
+}
+
 #pragma mark - 获取服务器历史消息
 -(void)getSerHistoryMsgAction
 {
@@ -525,9 +555,9 @@ static NSString *target;
 #pragma mark - 获取本地历史消息
 -(void)getLocalHistoryMsgAction
 {
-    [[RXIMChatService sharedSDK] getLocalHistoryMessageWithMsgId:nil target:self.conversationId sessionType:self.covType limit:100 completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages,RXIMError *error) {
+    [[RXIMChatService sharedSDK] getLocalHistoryMessageWithMsgId:nil target:self.conversationId sessionType:self.covType limit:10 completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages,RXIMError *error) {
         if (!error) {
-            NSLog(@"历史消息回执 %@",messages);
+            NSLog(@"历史消息回执 count = %ld,%@",messages.count,messages);
         }
     }];
 }

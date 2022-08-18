@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RXIMChatService.h</key>
 		<data>
-		uNLU84DiqoZKc5UAGpu3h+f6nvI=
+		7sII3Q4vjUqmbYUL8rSlggNTonA=
 		</data>
 		<key>Headers/RXIMDownload.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/RXIMMessage.h</key>
 		<data>
-		l8n3+LpJDMyYSSYsFeAaK41HoZw=
+		cuuWPyUpPyTfIIYgjskvyvMKDZU=
 		</data>
 		<key>Headers/RXIMMsgAudioContent.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/RXIMMsgReplyContent.h</key>
 		<data>
-		XFy32lkfVogDo+mLDJT2Db2BMqA=
+		rpRq+xTcrqTXLcLyuDi9c3drTsU=
 		</data>
 		<key>Headers/RXIMMsgTextContent.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/RXIMSDKManager.h</key>
 		<data>
-		lkAtTB7jteC51VW7yGHiAOXAMPA=
+		Nfl4fXuGbDr0BT+4Ip+5dz3Gpsg=
 		</data>
 		<key>Headers/RXIMSdk.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/RXIMSendMessage.h</key>
 		<data>
-		wg7nEeLFnY9ZPnTBu1Hof86fde0=
+		NakgwaImzzkDwO/vTJK3tcrMqq8=
 		</data>
 		<key>Headers/RXIMSession.h</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		eR3rNKVfWUrck5RPQqAz3Y0bK1g=
+		alQjYEySTUymN5aOq3mF51fHnWY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -99,11 +99,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uNLU84DiqoZKc5UAGpu3h+f6nvI=
+			7sII3Q4vjUqmbYUL8rSlggNTonA=
 			</data>
 			<key>hash2</key>
 			<data>
-			kS5kFijVJ8phD2VrutnG5VqSINJzigTnb/ilv54+xYI=
+			KFBiCJ2LcfZ/4SV+mw2TbonZHibvp0o6L1BIYilu1kg=
 			</data>
 		</dict>
 		<key>Headers/RXIMDownload.h</key>
@@ -154,11 +154,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l8n3+LpJDMyYSSYsFeAaK41HoZw=
+			cuuWPyUpPyTfIIYgjskvyvMKDZU=
 			</data>
 			<key>hash2</key>
 			<data>
-			d5OR2U4VBNP/2R+dXdcTkmsxrmiPYUVdiCUFiJrILgI=
+			kJyRL3ixqFRGWYVYibE/eza6OPd63GgZAnGsOM8Kdas=
 			</data>
 		</dict>
 		<key>Headers/RXIMMsgAudioContent.h</key>
@@ -231,11 +231,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XFy32lkfVogDo+mLDJT2Db2BMqA=
+			rpRq+xTcrqTXLcLyuDi9c3drTsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			x86PUHFniJQ/dexJvs+KwYRk6HWqRXU0MIGlPvaGvZE=
+			zZX12j6ZIKRkHutq0lVHZWy/tIzGyeLbKSDmpfD/jfU=
 			</data>
 		</dict>
 		<key>Headers/RXIMMsgTextContent.h</key>
@@ -264,11 +264,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lkAtTB7jteC51VW7yGHiAOXAMPA=
+			Nfl4fXuGbDr0BT+4Ip+5dz3Gpsg=
 			</data>
 			<key>hash2</key>
 			<data>
-			GW8KEvc3aw+2KdBGZiFhwEDeOtsbllVrxkevWwZeA7I=
+			VrnDiWnUq/JOG9hhFDQe4cq8dp2D/okEK+GH6i7Oem8=
 			</data>
 		</dict>
 		<key>Headers/RXIMSdk.h</key>
@@ -286,11 +286,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wg7nEeLFnY9ZPnTBu1Hof86fde0=
+			NakgwaImzzkDwO/vTJK3tcrMqq8=
 			</data>
 			<key>hash2</key>
 			<data>
-			bgZ1UGLRJLKKZqZeYdk7zonEoP9+1+8MYf1ItTNwVdw=
+			LvLZPvKWCo02yHV9OiXI568sYXQDbAyXO+h1ga7Jb3o=
 			</data>
 		</dict>
 		<key>Headers/RXIMSession.h</key>
