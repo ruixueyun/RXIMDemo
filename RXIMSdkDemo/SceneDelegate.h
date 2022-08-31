@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.h
-//  JXIMSdkDemo
+//  RXIMSdkDemo
 //
-//  Created by 陈汉 on 2021/8/18.
+//  Created by weiyongjian on 2022/8/31.
 //
 
 #import <UIKit/UIKit.h>

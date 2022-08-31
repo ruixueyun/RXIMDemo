@@ -5,10 +5,9 @@
 //  Created by 陈汉 on 2021/8/18.
 //
 
-#import <RXIMSdk/RXIMSdk.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "ViewController.h"
-#import "TestActivity.h"
+#import <RXIMSdk/RXIMSdk.h>
 
 // - 设备屏幕宽
 #define kScreenWidth          [UIScreen mainScreen].bounds.size.width
@@ -33,7 +32,6 @@ static NSString *target;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 baseUrl:@"https://ruixue.weiletest.com" ossUrl:@"http://youle.jixiangtest.com" ossEndpoint:@"https://oss-cn-beijing.aliyuncs.com" ossBucketName:@"youleims"];
     NSString *userPhoneName = [[UIDevice currentDevice] name];
     if ([userPhoneName isEqualToString:@"陈汉的iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone1"]) {
         self.userId = @"testuser_9999";
@@ -66,7 +64,7 @@ static NSString *target;
             }
         }];
     }
-    self.conversationId = @"$2$test9988";
+    self.conversationId = @"$2$test998899";
     self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
@@ -348,7 +346,6 @@ static NSString *target;
     msg.type = RXIMMessageType_Image;
     msg.option = 7;
     msg.receiversArray = [self getReceiveAryWithCovType];
-    [RXIMChatService sharedSDK].delegate = self;
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
