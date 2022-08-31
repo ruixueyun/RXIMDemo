@@ -24,7 +24,7 @@
     [[DoraemonManager shareInstance] install];
 #endif
     //IM初始化
-    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 baseUrl:@"https://ruixue.weiletest.com" ossUrl:@"http://youle.jixiangtest.com" ossEndpoint:@"https://oss-cn-beijing.aliyuncs.com" ossBucketName:@"youleims"];
+    [[RXIMSDKManager sharedSDK] initWithProductId:@"产品id" channelId:@"渠道id" cpid:@"产品cpid".integerValue baseUrl:@"服务器域名" ossUrl:@"oss域名" ossEndpoint:@"oss域名" ossBucketName:@"oss bucketName"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -32,45 +32,20 @@ static NSString *target;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *userPhoneName = [[UIDevice currentDevice] name];
-    if ([userPhoneName isEqualToString:@"陈汉的iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone1"]) {
-        self.userId = @"testuser_9999";
-        self.targetId = @"testuser_8888";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
-    }else if([userPhoneName isEqualToString:@"iPhone (2)"]){
-        self.userId = @"testuser_8888";
-        self.targetId = @"testuser_7777";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
-    }else{
-        self.userId = @"testuser_7777";
-        self.targetId = @"testuser_8888";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
-    }
+    self.userId = @"自己的用户id";
+    self.targetId = @"对方的用户id";
+    [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
+        if (!error) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        }
+    }];
+    [RXIMChatService sharedSDK].delegate = self;
+    [RXIMSessionService sharedSDK].delegate = self;
     self.conversationId = @"$2$test998899";
     self.covType = RXIMSessionType_group;
     [self setUI];
-//    [[RXIMSDKManager sharedSDK] logout];
-    
-    [RXIMChatService sharedSDK].delegate = self;
-    [RXIMSessionService sharedSDK].delegate = self;
 }
 
 - (void)setUI
