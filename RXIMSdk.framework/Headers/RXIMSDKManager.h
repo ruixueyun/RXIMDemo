@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param productId 产品id
  * @param channelId 渠道id
  * @param cpId 产品cpid
+ * @param clientType 客户端类型
  * @param baseUrl 服务器域名
  * @param ossUrl oss域名
  * @param ossEndpoint oss endpoint
@@ -30,20 +31,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)initWithProductId:(NSString * _Nonnull)productId
                 channelId:(NSString * _Nonnull)channelId
                      cpid:(NSInteger)cpId
+               clientType:(NSInteger)clientType
                   baseUrl:(NSString * _Nonnull)baseUrl
                    ossUrl:(NSString * _Nullable)ossUrl
               ossEndpoint:(NSString * _Nullable)ossEndpoint
             ossBucketName:(NSString * _Nullable)ossBucketName;
 
-/***/
-
 /**
  * 登陆IM
  * @param userId 用户标识符，可以自定义或直接用瑞雪 OpenID
- * @param clientType 客户端类型
+ * @param accessToken 访问令牌
+ * @param refreshToken 刷新令牌
+ * @param aesKey AES 密钥
  */
 - (void)loginRXIMSDKWithUserId:(NSString * _Nonnull)userId
-                    clientType:(NSInteger)clientType
+                   accessToken:(NSString * _Nonnull)accessToken
+                  refreshToken:(NSString * _Nonnull)refreshToken
+                        aesKey:(NSString * _Nonnull)aesKey
                      complete:(void(^)(RXIMError *error))complete;
 
 /**

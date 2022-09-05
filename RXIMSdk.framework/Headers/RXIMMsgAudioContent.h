@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *audio_type;
 /** 语音时长 单位：秒 */
 @property(nonatomic, assign) NSInteger duration;
+/** 语音本地是否播放 */
+@property (nonatomic,assign) BOOL isPlay;
 
 @end
 

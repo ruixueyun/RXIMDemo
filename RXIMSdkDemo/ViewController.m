@@ -34,7 +34,7 @@ static NSString *target;
     [super viewDidLoad];
     self.userId = @"自己的用户id";
     self.targetId = @"对方的用户id";
-    [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
+    [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:@"访问令牌" refreshToken:@"刷新令牌" aesKey:@"AES密钥" complete:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         }else{
@@ -43,7 +43,7 @@ static NSString *target;
     }];
     [RXIMChatService sharedSDK].delegate = self;
     [RXIMSessionService sharedSDK].delegate = self;
-    self.conversationId = @"$2$test998899";
+    [self sendSingleAction];
     self.covType = RXIMSessionType_group;
     [self setUI];
 }
