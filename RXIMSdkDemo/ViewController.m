@@ -264,7 +264,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test9988";
+    self.conversationId = @"$2$test1122";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
@@ -623,8 +623,8 @@ static NSString *target;
 {
     RXIMJoinSession *joinSession = [[RXIMJoinSession alloc]init];
     joinSession.conversation_id = self.conversationId;
-    NSArray *joinCovAry = @[joinSession];
-    [[RXIMSessionService sharedSDK] joinConversations:joinCovAry completionHandler:^(RXIMError * _Nonnull error) {
+//    NSArray *joinCovAry = @[joinSession];
+    [[RXIMSessionService sharedSDK] joinConversations:joinSession completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"加入会话成功"];
         }else{

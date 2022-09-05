@@ -6,7 +6,7 @@
 	<dict>
 		<key>.DS_Store</key>
 		<data>
-		eYO1bWdUFHghT4pxJCprrT3HQTY=
+		N8wGnj9tKlPbqhGyw27vVdd0au8=
 		</data>
 		<key>Headers/RXIMChatService.h</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/RXIMSessionService.h</key>
 		<data>
-		8o/cvTB6oXUegLvQgKsjf/ght7I=
+		Hqm8Rkc35IZLzBO/KR7ypvaShpA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -327,11 +327,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8o/cvTB6oXUegLvQgKsjf/ght7I=
+			Hqm8Rkc35IZLzBO/KR7ypvaShpA=
 			</data>
 			<key>hash2</key>
 			<data>
-			PaQ1whOHg6NATpCY4ASY1mKcR8ix2cz5Coynd0w5uzg=
+			BSwZh/Vltqmn1HnIUKgBGVroORhpcMkazXmFsWQRIWg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
