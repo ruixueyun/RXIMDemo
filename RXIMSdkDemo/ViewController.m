@@ -36,36 +36,21 @@ static NSString *target;
     if ([userPhoneName isEqualToString:@"陈汉的iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone1"]) {
         self.userId = @"testuser_9999";
         self.targetId = @"testuser_8888";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
     }else if([userPhoneName isEqualToString:@"iPhone (2)"]){
         self.userId = @"testuser_8888";
         self.targetId = @"testuser_7777";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
     }else{
         self.userId = @"testuser_7777";
         self.targetId = @"testuser_8888";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId clientType:262657 complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
     }
-    self.conversationId = @"$2$test998899";
-    self.covType = RXIMSessionType_group;
+    [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:nil refreshToken:nil aesKey:nil complete:^(RXIMError * _Nonnull error) {
+        if (!error) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        }
+    }];
+    [self sendSingleAction];
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
     

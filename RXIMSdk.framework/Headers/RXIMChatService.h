@@ -74,14 +74,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 消息已读
  * @param message 已读的消息体
- * @param completionHandler 返回消息对象，处理本地逻辑用，发送成功以delegate方式回调。
+ * @param completionHandler 返回消息处理是否正常，发送成功以delegate方式回调。
  */
 - (void)readMessage:(RXIMMessage * _Nonnull)message completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
  * 消息撤回
  * @param message 撤回的消息体
- * @param completionHandler 返回消息对象，处理本地逻辑用，发送成功以delegate方式回调。
+ * @param completionHandler 返回消息处理是否正常，发送成功以delegate方式回调。
  */
 - (void)revokeMessage:(RXIMMessage * _Nonnull)message completionHandler:(void (^)(RXIMError *error))completionHandler;
 
@@ -114,6 +114,12 @@ NS_ASSUME_NONNULL_BEGIN
  * @param msgId 消息id
  */
 -(RXIMMessage *)getMsgWithMsgid:(NSString * _Nonnull)msgId;
+
+/**
+ * 设置语音消息已播放
+ * @param msgId 消息id
+ */
+- (BOOL)setAudioMessagePlayed:(NSString *)msgId;
 
 
 @end
