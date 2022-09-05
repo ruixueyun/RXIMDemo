@@ -25,7 +25,6 @@
 #endif
     //IM初始化
     [[RXIMSDKManager sharedSDK] initWithProductId:@"产品id" channelId:@"渠道id" cpid:@"产品cpid".integerValue clientType:262657 baseUrl:@"服务器域名" ossUrl:@"oss域名" ossEndpoint:@"oss域名" ossBucketName:@"oss bucketName"];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     ViewController *rootVC = [[ViewController alloc] init];

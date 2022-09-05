@@ -44,7 +44,7 @@ static NSString *target;
     [RXIMChatService sharedSDK].delegate = self;
     [RXIMSessionService sharedSDK].delegate = self;
     [self sendSingleAction];
-    self.covType = RXIMSessionType_group;
+    self.covType = RXIMSessionType_single;
     [self setUI];
 }
 
