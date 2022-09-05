@@ -613,8 +613,7 @@ static NSString *target;
 {
     RXIMJoinSession *joinSession = [[RXIMJoinSession alloc]init];
     joinSession.conversation_id = self.conversationId;
-    NSArray *joinCovAry = @[joinSession];
-    [[RXIMSessionService sharedSDK] joinConversations:joinCovAry completionHandler:^(RXIMError * _Nonnull error) {
+    [[RXIMSessionService sharedSDK] joinConversations:joinSession completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"加入会话成功"];
         }else{

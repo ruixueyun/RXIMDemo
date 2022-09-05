@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 加入会话
  * @param joinSessions 加入会话数组
  */
-- (void)joinConversations:(NSArray<RXIMJoinSession *> * _Nonnull)joinSessions
+- (void)joinConversations:(RXIMJoinSession * _Nonnull)joinSessions
         completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
