@@ -608,7 +608,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "546"
             endingLineNumber = "546"
-            landmarkName = "-getLocalHistoryMessageWithMsgId:target:sessionType:limit:completionHandler:"
+            landmarkName = "-setAudioMessagePlayed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -712,7 +712,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "004C95AE-F021-49FA-9199-C72CAAB98883"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../rximsdk/RXIMSdk/IM/Service/SingleChat&#xff08;&#x5355;&#x804a;&#xff09;/RXIMChatService.m"
@@ -944,8 +944,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "698"
             endingLineNumber = "698"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            landmarkName = "-getConversationWithCovId"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1072,8 +1072,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "705"
             endingLineNumber = "705"
-            landmarkName = "&#x83b7;&#x53d6;&#x4f1a;&#x8bdd;&#x6700;&#x540e;&#x4e00;&#x6761;&#x6d88;&#x606f;"
-            landmarkType = "19">
+            landmarkName = "-getConvLastMsg"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1136,7 +1136,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
             endingLineNumber = "81"
-            landmarkName = "-loginRXIMSDKWithUserId:clientType:complete:"
+            landmarkName = "-loginRXIMSDKWithUserId:accessToken:refreshToken:aesKey:complete:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1184,7 +1184,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
-            landmarkName = "-loginRXIMSDKWithUserId:clientType:complete:"
+            landmarkName = "-loginRXIMSDKWithUserId:accessToken:refreshToken:aesKey:complete:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1200,7 +1200,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "-loginRXIMSDKWithUserId:clientType:complete:"
+            landmarkName = "-loginRXIMSDKWithUserId:accessToken:refreshToken:aesKey:complete:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1360,8 +1360,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "563"
             endingLineNumber = "563"
-            landmarkName = "-getReceiveAryWithCovType"
-            landmarkType = "7">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1393,6 +1393,22 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D973EA1C-D11D-4A01-AECC-BC7CFFEA6C20"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../rximsdk/RXIMSdk/IM/Service/SingleChat&#xff08;&#x5355;&#x804a;&#xff09;/RXIMChatService.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-sendMessageHandle:completionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
