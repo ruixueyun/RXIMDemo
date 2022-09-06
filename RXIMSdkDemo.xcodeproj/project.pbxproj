@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */; };
 		B5BB669028BF2B900084072E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB668F28BF2B900084072E /* AppDelegate.m */; };
 		B5BB669328BF2B900084072E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB669228BF2B900084072E /* SceneDelegate.m */; };
 		B5BB669628BF2B900084072E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB669528BF2B900084072E /* ViewController.m */; };
@@ -20,12 +21,12 @@
 		B5BB66B128BF2BE00084072E /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B5BB66AB28BF2BE00084072E /* video.mp4 */; };
 		B5BB66B228BF2BE00084072E /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BB66AC28BF2BE00084072E /* location.png */; };
 		B5BB66B328BF2BE00084072E /* audio.amr in Resources */ = {isa = PBXBuildFile; fileRef = B5BB66AD28BF2BE00084072E /* audio.amr */; };
-		B5BB66B528BF2D0B0084072E /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BB66B428BF2D0B0084072E /* RXIMSdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43250A936F03E3CEF1ABBEC6 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A97C5362A3D4C23CAA11563B /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		B5BB668B28BF2B900084072E /* RXIMSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXIMSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB668E28BF2B900084072E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5BB668F28BF2B900084072E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		B5BB66AB28BF2BE00084072E /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		B5BB66AC28BF2BE00084072E /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		B5BB66AD28BF2BE00084072E /* audio.amr */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.amr; sourceTree = "<group>"; };
-		B5BB66B428BF2D0B0084072E /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5BB66B528BF2D0B0084072E /* RXIMSdk.framework in Frameworks */,
+				B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 		AE4586810A691F937E0DF43B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5BB66B428BF2D0B0084072E /* RXIMSdk.framework */,
+				B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
