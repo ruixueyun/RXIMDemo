@@ -24,6 +24,9 @@ static NSString *target;
 @property (nonatomic, strong) NSString *conversationId;
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *targetId;
+@property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) NSString *refreshToken;
+@property (nonatomic, strong) NSString *aesKey;
 @property (nonatomic, assign) RXIMSessionType covType;
 @property (nonatomic, strong) UILabel *covIdLab;
 @end
@@ -36,40 +39,33 @@ static NSString *target;
     if ([userPhoneName isEqualToString:@"陈汉的iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone1"]) {
         self.userId = @"testuser_9999";
         self.targetId = @"testuser_8888";
-    }else if([userPhoneName isEqualToString:@"iPhone (2)"]){
-        self.userId = @"1051022";
-        self.targetId = @"1051021";
+    }else if([userPhoneName isEqualToString:@"iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone 12"]){
 //        self.userId = @"testuser_8888";
 //        self.targetId = @"testuser_7777";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:@"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI3MTMyMzJ9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjVmZmVkZDAzLWY3NjktNDMyYy04MGUwLWJlOTE0Y2ZlOGY2MiIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJiZDJkM2EzZWZiMmM4NTViYjdhNjM1YWFmYmYxMGViYWZjNDdlNjcxZTgzMjA4N2ZiMzc2ZmExYTY4YWYyN2Y1IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.NBVCAHuTWpgXkLUvAN9SSg0aGTiBAmwh35OIYO1BVv4" refreshToken:@"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUyMTg4MzJ9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6Ijc2ODJjYzRjLWU3ZDgtNDY0NS1iYjY4LTJkOGFmYWYxZDYxMSIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJiZDJkM2EzZWZiMmM4NTViYjdhNjM1YWFmYmYxMGViYWZjNDdlNjcxZTgzMjA4N2ZiMzc2ZmExYTY4YWYyN2Y1IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.ABgmbTBuKiINe1rLisWyx-LA_5ATPzW6Y_xkR5GWc8U" aesKey:@"bd2d3a3efb2c855bb7a635aafbf10ebafc47e671e832087fb376fa1a68af27f5" complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
-    }else{
-        self.userId = @"1051024";
+        self.userId = @"1050988";
         self.targetId = @"1051022";
+        self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI3MjUyNjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImU2NWMyMDU4LTY0YjQtNGEzYi1iNDM4LTYwYzczNTZkOGFkZSIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiI0NzIwODlkZDVhOTI4ODVlYTQ1OTJjZmVmNzliNjczMjIwZDlmMDQxMWI2MmQ4Y2RkMDFjZjcwMTIzYmZhNDRjIiwiaW1zX2NoYW5uZWxpZCI6IjEwMCIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTA5ODgifX0.-jrOagFPk4AbYGKcFp0m8c0H8oSbOw7q7wT9op1XJEc";
+        self.refreshToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUyMzA4NjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImRjNzgzMDk2LWU4YzUtNDVlZi1hM2VlLTE4NDFiNjc1NTY2MyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiI0NzIwODlkZDVhOTI4ODVlYTQ1OTJjZmVmNzliNjczMjIwZDlmMDQxMWI2MmQ4Y2RkMDFjZjcwMTIzYmZhNDRjIiwiaW1zX2NoYW5uZWxpZCI6IjEwMCIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTA5ODgifX0.IsOxew6hLvqC_TcPk831Q678wi2jI3pdKTzD3Ih0UiA";
+        self.aesKey = @"472089dd5a92885ea4592cfef79b673220d9f0411b62d8cdd01cf70123bfa44c";
+        
+    }else{
 //        self.userId = @"testuser_7777";
 //        self.targetId = @"testuser_8888";
-        [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:@"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI3MTIxODN9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImQyZGU4MzUxLThiYjctNGJjYi05ZjMyLTgzNDViODJhMDRhNCIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIwZmI5NTAzOWI0NzNiYTkwZTMwNTk1ZmExOGRlOGM1N2FkOWUyYzlkODM3MDIwMzQ3ZjU4NThlNTZkZTNhZjE2IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjEifX0.k5y62E5PH-CRsnNXdAZojg3HYPVfb78IkoP1FrFywGQ" refreshToken:@"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUyMTc3ODN9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImFkOWRkNDRlLTAwY2ItNDE5My1hNGVkLWM3YjVhYzg5ZjUxMyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIwZmI5NTAzOWI0NzNiYTkwZTMwNTk1ZmExOGRlOGM1N2FkOWUyYzlkODM3MDIwMzQ3ZjU4NThlNTZkZTNhZjE2IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjEifX0.SdfwIZQ8x7lDwQRe5c-1OiEU0GKgpwKM_4Lxkq3sbls" aesKey:@"0fb95039b473ba90e30595fa18de8c57ad9e2c9d837020347f5858e56de3af16" complete:^(RXIMError * _Nonnull error) {
-            if (!error) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"登录失败"];
-            }
-        }];
+        self.userId = @"1051022";
+        self.targetId = @"1050988";
+        self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI3MjU0NjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImI5OWMzNmQ4LWUxN2EtNDk3MS04MDM3LWQyNGZlYTdhNDFkNCIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmMTJhOGQyOTQyZjk0MjQwMjFlNWYxNDM0MWYyNjEwN2I5MWVlODAwYmU2NDEzNjRjZTA4ZDVkMDViZjUzMzEwIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.fpyW-Kf3Sut79jJ-wx8mIQ8n1XJJsjddj0-cXR0skTw";
+        self.refreshToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUyMzEwNjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjUwMjY0ZWY1LTBkNzEtNDFjMC05MDlkLWVkMWQ0N2I3MmE1MCIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmMTJhOGQyOTQyZjk0MjQwMjFlNWYxNDM0MWYyNjEwN2I5MWVlODAwYmU2NDEzNjRjZTA4ZDVkMDViZjUzMzEwIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.KG9wAuQSepZ9k-D-WkGMcEt4Gh9-ts51oxIQlk-n63w";
+        self.aesKey = @"f12a8d2942f9424021e5f14341f26107b91ee800be641364ce08d5d05bf53310";
     }
-    
-//    [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:@"rxuCp2qG_m4oz-H9G0rI-ePkX5wP0Exr" accessToken:@"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI1MzA4MzB9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImFlMDM2NmY1LTk2YWQtNDMzYS1hMGFkLTYwNTE4OTUwOWZlYyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIwZTQ1YzM3NjgwMTJmZTQ2MmZiOGFhNTA5YTEwODA1ZjFkYTlhM2Q3NzM1ZGFmOThkOWYzZDJlYThjZjcwY2MxIiwiaW1zX2NoYW5uZWxpZCI6IjEwMCIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTA5ODgifX0.lTzWrf8b_YovwktSD2AfzLlQVx_SKDn2I2bnHlHD9HQ" refreshToken:@"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUwMzY0MzB9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjkxZDY2MDhiLWI3OGQtNDA1OS1hOTkxLWJkMTcxMjkxMjcyMCIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIwZTQ1YzM3NjgwMTJmZTQ2MmZiOGFhNTA5YTEwODA1ZjFkYTlhM2Q3NzM1ZGFmOThkOWYzZDJlYThjZjcwY2MxIiwiaW1zX2NoYW5uZWxpZCI6IjEwMCIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTA5ODgifX0.muNtAuok1QZlCTmHnLBC2QP--_UYsiivADUrSfdvnXA" aesKey:@"0e45c3768012fe462fb8aa509a10805f1da9a3d7735daf98d9f3d2ea8cf70cc1" complete:^(RXIMError * _Nonnull error) {
-//        if (!error) {
-//            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-//        }else{
-//            [SVProgressHUD showErrorWithStatus:@"登录失败"];
-//        }
-//    }];
-    [self sendSingleAction];
+    [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:self.accessToken refreshToken:self.refreshToken aesKey:self.aesKey complete:^(RXIMError * _Nonnull error) {
+        if (!error) {
+            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"登录失败"];
+        }
+    }];
+    self.conversationId = @"$2$test998899";
+    self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
     
@@ -283,7 +279,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test112233";
+    self.conversationId = @"$2$test9988";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
@@ -292,8 +288,8 @@ static NSString *target;
 #pragma mark - 切换渠道
 -(void)sendChannelAction
 {
-    self.conversationId = @"$4$aaaa_bbbbcccc";
-//    self.conversationId = @"$4$11112222";
+    self.conversationId = @"$4$test888912";
+//    self.conversationId = @"$4$worldChannel";
     self.covType = RXIMSessionType_channel;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换渠道成功"];
@@ -302,7 +298,7 @@ static NSString *target;
 #pragma mark - 切换自定义单聊
 -(void)sendCustomAction
 {
-    self.conversationId = @"$3$test87";
+    self.conversationId = @"$3$test8";
     self.covType = RXIMSessionType_custom;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换自定义单聊成功"];
@@ -643,7 +639,6 @@ static NSString *target;
 {
     RXIMJoinSession *joinSession = [[RXIMJoinSession alloc]init];
     joinSession.conversation_id = self.conversationId;
-//    NSArray *joinCovAry = @[joinSession];
     [[RXIMSessionService sharedSDK] joinConversations:joinSession completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"加入会话成功"];
