@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CBD114BF06B41B057235C79 /* Pods_RXIMSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AB7BFAA377BB003081EDD8 /* Pods_RXIMSdkDemo.framework */; };
 		B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */; };
 		B5BB669028BF2B900084072E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB668F28BF2B900084072E /* AppDelegate.m */; };
 		B5BB669328BF2B900084072E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB669228BF2B900084072E /* SceneDelegate.m */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		43250A936F03E3CEF1ABBEC6 /* Pods-RXIMSdkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.release.xcconfig"; path = "Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.release.xcconfig"; sourceTree = "<group>"; };
+		49AB7BFAA377BB003081EDD8 /* Pods_RXIMSdkDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXIMSdkDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97C5362A3D4C23CAA11563B /* Pods-RXIMSdkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXIMSdkDemo.debug.xcconfig"; path = "Target Support Files/Pods-RXIMSdkDemo/Pods-RXIMSdkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RXIMSdk.framework; sourceTree = "<group>"; };
 		B5BB668B28BF2B900084072E /* RXIMSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXIMSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */,
+				3CBD114BF06B41B057235C79 /* Pods_RXIMSdkDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */,
+				49AB7BFAA377BB003081EDD8 /* Pods_RXIMSdkDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
