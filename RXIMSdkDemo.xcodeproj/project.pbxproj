@@ -10,7 +10,6 @@
 		3CBD114BF06B41B057235C79 /* Pods_RXIMSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AB7BFAA377BB003081EDD8 /* Pods_RXIMSdkDemo.framework */; };
 		B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */; };
 		B5BB669028BF2B900084072E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB668F28BF2B900084072E /* AppDelegate.m */; };
-		B5BB669328BF2B900084072E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB669228BF2B900084072E /* SceneDelegate.m */; };
 		B5BB669628BF2B900084072E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB669528BF2B900084072E /* ViewController.m */; };
 		B5BB669928BF2B900084072E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB669728BF2B900084072E /* Main.storyboard */; };
 		B5BB669B28BF2B900084072E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BB669A28BF2B900084072E /* Assets.xcassets */; };
@@ -32,8 +31,6 @@
 		B5BB668B28BF2B900084072E /* RXIMSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXIMSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB668E28BF2B900084072E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B5BB668F28BF2B900084072E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B5BB669128BF2B900084072E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		B5BB669228BF2B900084072E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		B5BB669428BF2B900084072E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B5BB669528BF2B900084072E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B5BB669828BF2B900084072E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,8 +101,6 @@
 				B5BB66A728BF2BE00084072E /* resource */,
 				B5BB668E28BF2B900084072E /* AppDelegate.h */,
 				B5BB668F28BF2B900084072E /* AppDelegate.m */,
-				B5BB669128BF2B900084072E /* SceneDelegate.h */,
-				B5BB669228BF2B900084072E /* SceneDelegate.m */,
 				B5BB669428BF2B900084072E /* ViewController.h */,
 				B5BB669528BF2B900084072E /* ViewController.m */,
 				B5BB669728BF2B900084072E /* Main.storyboard */,
@@ -253,7 +248,6 @@
 				B5BB669628BF2B900084072E /* ViewController.m in Sources */,
 				B5BB669028BF2B900084072E /* AppDelegate.m in Sources */,
 				B5BB66A128BF2B900084072E /* main.m in Sources */,
-				B5BB669328BF2B900084072E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

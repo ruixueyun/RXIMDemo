@@ -29,6 +29,7 @@ static NSString *target;
 @property (nonatomic, strong) NSString *aesKey;
 @property (nonatomic, assign) RXIMSessionType covType;
 @property (nonatomic, strong) UILabel *covIdLab;
+@property (nonatomic, assign) NSInteger msgCount;
 @end
 
 @implementation ViewController
@@ -40,19 +41,19 @@ static NSString *target;
         self.userId = @"testuser_9999";
         self.targetId = @"testuser_8888";
     }else if([userPhoneName isEqualToString:@"iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone 12"]){
-//        self.userId = @"testuser_8888";
-//        self.targetId = @"testuser_7777";
-        self.userId = @"1050988";
-        self.targetId = @"1051022";
+        self.userId = @"testuser_88881";
+        self.targetId = @"testuser_77771";
+//        self.userId = @"1050988";
+//        self.targetId = @"1051022";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI3MjUyNjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImU2NWMyMDU4LTY0YjQtNGEzYi1iNDM4LTYwYzczNTZkOGFkZSIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiI0NzIwODlkZDVhOTI4ODVlYTQ1OTJjZmVmNzliNjczMjIwZDlmMDQxMWI2MmQ4Y2RkMDFjZjcwMTIzYmZhNDRjIiwiaW1zX2NoYW5uZWxpZCI6IjEwMCIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTA5ODgifX0.-jrOagFPk4AbYGKcFp0m8c0H8oSbOw7q7wT9op1XJEc";
         self.refreshToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUyMzA4NjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImRjNzgzMDk2LWU4YzUtNDVlZi1hM2VlLTE4NDFiNjc1NTY2MyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiI0NzIwODlkZDVhOTI4ODVlYTQ1OTJjZmVmNzliNjczMjIwZDlmMDQxMWI2MmQ4Y2RkMDFjZjcwMTIzYmZhNDRjIiwiaW1zX2NoYW5uZWxpZCI6IjEwMCIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTA5ODgifX0.IsOxew6hLvqC_TcPk831Q678wi2jI3pdKTzD3Ih0UiA";
         self.aesKey = @"472089dd5a92885ea4592cfef79b673220d9f0411b62d8cdd01cf70123bfa44c";
         
     }else{
-//        self.userId = @"testuser_7777";
-//        self.targetId = @"testuser_8888";
-        self.userId = @"1051022";
-        self.targetId = @"1050988";
+        self.userId = @"testuser_77771";
+        self.targetId = @"testuser_88881";
+//        self.userId = @"1051022";
+//        self.targetId = @"1050988";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjI3MjU0NjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImI5OWMzNmQ4LWUxN2EtNDk3MS04MDM3LWQyNGZlYTdhNDFkNCIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmMTJhOGQyOTQyZjk0MjQwMjFlNWYxNDM0MWYyNjEwN2I5MWVlODAwYmU2NDEzNjRjZTA4ZDVkMDViZjUzMzEwIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.fpyW-Kf3Sut79jJ-wx8mIQ8n1XJJsjddj0-cXR0skTw";
         self.refreshToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjUyMzEwNjF9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjUwMjY0ZWY1LTBkNzEtNDFjMC05MDlkLWVkMWQ0N2I3MmE1MCIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmMTJhOGQyOTQyZjk0MjQwMjFlNWYxNDM0MWYyNjEwN2I5MWVlODAwYmU2NDEzNjRjZTA4ZDVkMDViZjUzMzEwIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMDczIiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.KG9wAuQSepZ9k-D-WkGMcEt4Gh9-ts51oxIQlk-n63w";
         self.aesKey = @"f12a8d2942f9424021e5f14341f26107b91ee800be641364ce08d5d05bf53310";
@@ -288,7 +289,7 @@ static NSString *target;
 #pragma mark - 切换渠道
 -(void)sendChannelAction
 {
-    self.conversationId = @"$4$test888912";
+    self.conversationId = @"$4$test9876";
 //    self.conversationId = @"$4$worldChannel";
     self.covType = RXIMSessionType_channel;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
@@ -307,8 +308,9 @@ static NSString *target;
 #pragma mark - 发送文本消息
 - (void)sendTextMsgAction
 {
+    self.msgCount++;
     RXIMMsgTextContent *textContent = [[RXIMMsgTextContent alloc] init];
-    textContent.text = @"text111";
+    textContent.text = [NSString stringWithFormat:@"文本消息 %ld",(long)self.msgCount];
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.conversationId = self.conversationId;
     msg.content = textContent;
@@ -738,7 +740,7 @@ static NSString *target;
 {
     NSLog(@"消息发送成功");
     self.msgObj = msgObj;
-    [SVProgressHUD showSuccessWithStatus:@"发送成功"];
+    [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ 发送成功",msgObj.msgId]];
 }
 
 #pragma mark - 消息发送失败回执
