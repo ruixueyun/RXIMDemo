@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param cpId 产品cpid
  * @param clientType 客户端类型
  * @param baseUrl 服务器域名
+ * @param version sdk版本号
  * @param ossUrl oss域名
  * @param ossEndpoint oss endpoint
  * @param ossBucketName oss bucketName
@@ -32,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
                 channelId:(NSString * _Nonnull)channelId
                      cpid:(NSInteger)cpId
                clientType:(NSInteger)clientType
+                  version:(NSString * _Nonnull)version
                   baseUrl:(NSString * _Nonnull)baseUrl
                    ossUrl:(NSString * _Nullable)ossUrl
               ossEndpoint:(NSString * _Nullable)ossEndpoint
