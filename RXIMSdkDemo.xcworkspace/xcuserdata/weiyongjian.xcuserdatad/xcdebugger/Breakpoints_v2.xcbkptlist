@@ -190,10 +190,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "443"
+            endingLineNumber = "443"
+            landmarkName = "-sendFileMsgAction"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,8 +238,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
             landmarkName = "-sendAudioMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "-sendVideoMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -286,10 +286,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "708"
-            endingLineNumber = "708"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "707"
+            endingLineNumber = "707"
+            landmarkName = "-receiveMessage:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -334,8 +334,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "315"
-            endingLineNumber = "315"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-sendImgMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "722"
-            endingLineNumber = "722"
+            startingLineNumber = "721"
+            endingLineNumber = "721"
             landmarkName = "-sendMessageFailure:error:"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,10 +462,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "747"
-            endingLineNumber = "747"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "750"
+            endingLineNumber = "750">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,8 +492,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -558,8 +556,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
+            startingLineNumber = "519"
+            endingLineNumber = "519"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -622,8 +620,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "-sendImgMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -654,8 +652,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
             landmarkName = "-sendFileMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -702,25 +700,9 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "-sendLocationMsgAction"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14F7AF3B-A61B-4939-B396-C1686B7B71E7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../rximsdk/RXIMSdk/Common/Socket&#xff08;&#x901a;&#x4fe1;&#xff09;/RXIMSocket.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
-            landmarkName = "-socket:didReadData:withTag:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -750,8 +732,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "552"
-            endingLineNumber = "552"
+            startingLineNumber = "551"
+            endingLineNumber = "551"
             landmarkName = "-getReceiveAryWithCovType"
             landmarkType = "7">
          </BreakpointContent>
@@ -798,8 +780,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "712"
-            endingLineNumber = "712"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
             landmarkName = "-sendMessageSuccess:"
             landmarkType = "7">
          </BreakpointContent>
@@ -878,10 +860,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "719"
-            endingLineNumber = "719"
-            landmarkName = "-sendMessageFailure:error:"
-            landmarkType = "7">
+            startingLineNumber = "718"
+            endingLineNumber = "718"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -894,8 +876,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "761"
-            endingLineNumber = "761">
+            startingLineNumber = "764"
+            endingLineNumber = "764">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -908,8 +890,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "767"
-            endingLineNumber = "767">
+            startingLineNumber = "770"
+            endingLineNumber = "770">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -922,8 +904,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "676"
-            endingLineNumber = "676"
+            startingLineNumber = "675"
+            endingLineNumber = "675"
             landmarkName = "-clearUnreadCount"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,8 +936,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "625"
-            endingLineNumber = "625"
+            startingLineNumber = "624"
+            endingLineNumber = "624"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -970,8 +952,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "534"
-            endingLineNumber = "534"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
             landmarkName = "-getLocalHistoryMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -986,8 +968,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "691"
-            endingLineNumber = "691"
+            startingLineNumber = "690"
+            endingLineNumber = "690"
             landmarkName = "-getConversationWithCovId"
             landmarkType = "7">
          </BreakpointContent>
@@ -1002,10 +984,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "726"
-            endingLineNumber = "726"
-            landmarkName = "-historyMessage:"
-            landmarkType = "7">
+            startingLineNumber = "725"
+            endingLineNumber = "725"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1034,10 +1016,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "624"
-            endingLineNumber = "624"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "623"
+            endingLineNumber = "623"
+            landmarkName = "-joinConvAction"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1050,8 +1032,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "750"
-            endingLineNumber = "750">
+            startingLineNumber = "753"
+            endingLineNumber = "753">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1272,10 +1254,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "585"
-            endingLineNumber = "585"
-            landmarkName = "-updateConvInfoAction"
-            landmarkType = "7">
+            startingLineNumber = "584"
+            endingLineNumber = "584"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1288,10 +1270,10 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "735"
-            endingLineNumber = "735"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            startingLineNumber = "738"
+            endingLineNumber = "738"
+            landmarkName = "-onSessionLastMessageChanged:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1496,8 +1478,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "597"
-            endingLineNumber = "597"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "-updateConvInfoAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -1624,8 +1606,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "-sendImgMsgAction"
             landmarkType = "7">
          </BreakpointContent>
@@ -1960,8 +1942,8 @@
             filePath = "RXIMSdkDemo/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "732"
-            endingLineNumber = "732"
+            startingLineNumber = "731"
+            endingLineNumber = "731"
             landmarkName = "-historyMessage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2018,7 +2000,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "74DEA5A5-9F34-4D73-B3BD-6B4CF76679D1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../rximsdk/RXIMSdk/Common/Socket&#xff08;&#x901a;&#x4fe1;&#xff09;/RXIMSocket.m"
@@ -2033,32 +2015,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E27D052A-52FA-48E1-82C7-44E7715F8BA9"
-            shouldBeEnabled = "Yes"
+            uuid = "03103DDB-7901-4122-B042-3B2FDEAADF00"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../rximsdk/RXIMSdk/Common/Socket&#xff08;&#x901a;&#x4fe1;&#xff09;/MsgHandle&#xff08;&#x6d88;&#x606f;&#x5904;&#x7406;&#xff09;/RXIMMsgHandle.m"
+            filePath = "../rximsdk/RXIMSdk/Common/Socket&#xff08;&#x901a;&#x4fe1;&#xff09;/RXIMSocket.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "+getConnectData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B5BD5DC8-DF7C-41C8-A5B9-62FDC31DE765"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../rximsdk/RXIMSdk/Common/Socket&#xff08;&#x901a;&#x4fe1;&#xff09;/MsgHandle&#xff08;&#x6d88;&#x606f;&#x5904;&#x7406;&#xff09;/RXIMMsgHandle.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "+getConnectData"
+            startingLineNumber = "353"
+            endingLineNumber = "353"
+            landmarkName = "-socket:didReadData:withTag:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
