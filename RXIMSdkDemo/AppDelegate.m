@@ -25,7 +25,7 @@
 #endif
     //IM初始化
 //    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 clientType:262657 version:@"v1.0.0" baseUrl:@"https://ruixue.weiletest.com" ossUrl:@"http://youle.jixiangtest.com" ossEndpoint:@"https://oss-cn-beijing.aliyuncs.com" ossBucketName:@"youleims"];
-    [[RXIMSDKManager sharedSDK] initWithProductId:@"423" channelId:@"102" cpid:1000005 clientType:262657 version:@"v1.0.0" baseUrl:@"https://rx-api.weilemks.com" ossUrl:@"http://youle.jixiangtest.com" ossEndpoint:@"https://oss-cn-beijing.aliyuncs.com" ossBucketName:@"youleims"];
+    [[RXIMSDKManager sharedSDK] initWithProductId:@"423" channelId:@"102" cpid:1000005 clientType:262657 version:@"v1.0.0" baseUrl:@"https://rx-api.weilemks.com"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -308,9 +308,8 @@ static NSString *target;
 #pragma mark - 发送文本消息
 - (void)sendTextMsgAction
 {
-    self.msgCount++;
     RXIMMsgTextContent *textContent = [[RXIMMsgTextContent alloc] init];
-    textContent.text = [NSString stringWithFormat:@"文本消息 %ld",(long)self.msgCount];
+    textContent.text = @"文本消息";
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.conversationId = self.conversationId;
     msg.content = textContent;
@@ -731,7 +730,11 @@ static NSString *target;
 {
     NSLog(@"接收消息");
     self.msgObj = msgs.lastObject;
-    [SVProgressHUD showSuccessWithStatus:@"接收消息成功"];
+    for (RXIMMessage *msg in msgs) {
+        self.msgCount++;
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"接收消息%ld成功",(long)self.msgCount]];
+    }
+    
 }
 
 #pragma mark - <RXIMMessageDelegate>
