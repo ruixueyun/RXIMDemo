@@ -36,6 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 消息内容 */
 @property (nonatomic, strong) id content;
 
+/** 阅后即焚超时时间，单位毫秒，只有消息选项option包含RXIMMsgOption_snapchat才有效 */
+@property (nonatomic, assign) NSInteger snapchat;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -39,6 +39,8 @@ typedef enum : NSUInteger {
     RXIMMessageType_read = 201,
     /** 撤回 */
     RXIMMessageType_recall = 202,
+    /** 删除 */
+    RXIMMessageType_snapchat = 203,
 } RXIMMessageType;
 
 /** 会话类型 */
@@ -72,7 +74,9 @@ typedef enum : NSUInteger {
     /** 保存历史消息 */
     RXIMMsgOption_saveHistory = 2,
     /** 开启已读回执 */
-    RXIMMsgOption_readReceipt = 4
+    RXIMMsgOption_readReceipt = 4,
+    /** 开启阅后即焚 */
+    RXIMMsgOption_snapchat = 8
 } RXIMMsgOption;
 
 /** 消息体定义 */
@@ -137,6 +141,9 @@ typedef enum : NSUInteger {
 
 /** 消息未读数 */
 @property (nonatomic, assign) NSInteger unreadCount;
+
+/** 阅后即焚的超时时间，单位毫秒 */
+@property (nonatomic, assign) NSInteger snapchat;
 
 @end
 

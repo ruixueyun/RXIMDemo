@@ -41,8 +41,8 @@ static NSString *target;
         self.userId = @"testuser_9999";
         self.targetId = @"testuser_8888";
     }else if([userPhoneName isEqualToString:@"iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone 12"]){
-//        self.userId = @"testuser_88881";
-//        self.targetId = @"testuser_77771";
+//        self.userId = @"testuser_9999";
+//        self.targetId = @"testuser_7777";
         self.userId = @"1051021";
         self.targetId = @"1051022";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjMxMzk4MDV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjhkODBkYWQyLTQyODEtNDZjNi1hNTk3LTVmNTIyMmYzNzg1YyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmYmMyNzVjYjcwZWZlZDk4MzIyOWY4Y2EyM2Q2OTEzZDk3MTE1NTRlNzlkYmFjZTU1MzM2MWUwMTQ3NzNkMTk3IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjEifX0.ERI1PDhY_O-FG8B9enu3TdiUk73HyMLlhRCPPGfOa8o";
@@ -50,8 +50,8 @@ static NSString *target;
         self.aesKey = @"fbc275cb70efed983229f8ca23d6913d9711554e79dbace553361e014773d197";
         
     }else{
-//        self.userId = @"testuser_77771";
-//        self.targetId = @"testuser_88881";
+//        self.userId = @"testuser_9999";
+//        self.targetId = @"testuser_7777";
         self.userId = @"1051022";
         self.targetId = @"1051021";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjMxMzk4NjV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjA4OWFlZjk2LTc3YmQtNDE4Yy05Mzc4LWI3ZTcxNWU4YjdmYyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIxYmU4NTY0ODA0Nzc2YmQ1ZDdjOWI1MWVlOTU5OTAxMjA0YjIxMGIzYjhhMDUxOTA4NGVkODQ3ZWM4Zjc0YTliIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.OghEYY0jayhmhoENsfontS6d8v4-VkwiMekSx4O5PIc";
