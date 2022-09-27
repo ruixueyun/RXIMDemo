@@ -18,7 +18,7 @@
 
 static NSString *target;
 
-@interface ViewController ()<RXIMMessageDelegate,RXIMSessionServiceDelegate>
+@interface ViewController ()<RXIMSocketDelegate,RXIMMessageDelegate,RXIMSessionServiceDelegate>
 
 @property (nonatomic, strong) RXIMMessage *msgObj;
 @property (nonatomic, strong) NSString *conversationId;
@@ -41,25 +41,29 @@ static NSString *target;
         self.userId = @"testuser_9999";
         self.targetId = @"testuser_8888";
     }else if([userPhoneName isEqualToString:@"iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone 12"]){
-//        self.userId = @"testuser_9999";
-//        self.targetId = @"testuser_7777";
-        self.userId = @"1051021";
-        self.targetId = @"1051022";
+        self.userId = @"testuser_9999";
+        self.targetId = @"testuser_7777";
+//        self.userId = @"1051021";
+//        self.targetId = @"1051022";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjMxMzk4MDV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjhkODBkYWQyLTQyODEtNDZjNi1hNTk3LTVmNTIyMmYzNzg1YyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmYmMyNzVjYjcwZWZlZDk4MzIyOWY4Y2EyM2Q2OTEzZDk3MTE1NTRlNzlkYmFjZTU1MzM2MWUwMTQ3NzNkMTk3IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjEifX0.ERI1PDhY_O-FG8B9enu3TdiUk73HyMLlhRCPPGfOa8o";
         self.refreshToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjU2NDU0MDV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6ImQwODk0MzdhLTM5NWYtNDI5My1hM2I0LWU1NTk2NTk3N2RjMyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmYmMyNzVjYjcwZWZlZDk4MzIyOWY4Y2EyM2Q2OTEzZDk3MTE1NTRlNzlkYmFjZTU1MzM2MWUwMTQ3NzNkMTk3IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjEifX0.ONZlXlzyEB1azPY9F_SB4W-tOaODytSzd1u6BfRTvd8";
         self.aesKey = @"fbc275cb70efed983229f8ca23d6913d9711554e79dbace553361e014773d197";
         
     }else{
-//        self.userId = @"testuser_9999";
-//        self.targetId = @"testuser_7777";
-        self.userId = @"1051022";
-        self.targetId = @"1051021";
+        self.userId = @"testuser_7777";
+        self.targetId = @"testuser_9999";
+//        self.userId = @"1051022";
+//        self.targetId = @"1051021";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjMxMzk4NjV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjA4OWFlZjk2LTc3YmQtNDE4Yy05Mzc4LWI3ZTcxNWU4YjdmYyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIxYmU4NTY0ODA0Nzc2YmQ1ZDdjOWI1MWVlOTU5OTAxMjA0YjIxMGIzYjhhMDUxOTA4NGVkODQ3ZWM4Zjc0YTliIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.OghEYY0jayhmhoENsfontS6d8v4-VkwiMekSx4O5PIc";
         self.refreshToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjU2NDU0NjV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjZkOGYxOWFlLTgxZTktNDI2Yi1iZGY0LTRlNGFiYTA1NDk2MyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIxYmU4NTY0ODA0Nzc2YmQ1ZDdjOWI1MWVlOTU5OTAxMjA0YjIxMGIzYjhhMDUxOTA4NGVkODQ3ZWM4Zjc0YTliIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.CpKZXIR3qIAGvWo_k4jJs27ozYgrk7JkGE2Ym7RDId4";
         self.aesKey = @"1be8564804776bd5d7c9b51ee959901204b210b3b8a0519084ed847ec8f74a9b";
     }
+    
+    __weak typeof(self) weakself = self;
     [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:self.accessToken refreshToken:self.refreshToken aesKey:self.aesKey complete:^(RXIMError * _Nonnull error) {
         if (!error) {
+            [RXIMSocketEngine sharedSDK].delegate = weakself;
+            [[RXIMSocketEngine sharedSDK] onStart];
             [SVProgressHUD showSuccessWithStatus:@"登录成功"];
         }else{
             [SVProgressHUD showErrorWithStatus:@"登录失败"];
@@ -724,7 +728,22 @@ static NSString *target;
     NSLog(@"%@",msg.msgId);
 }
 
-#pragma mark -- <RXIMMessageDelegate>
+#pragma mark - 相关代理操作
+
+//#pragma mark - <RXIMSocketDelegate>
+//#pragma mark - 连接成功回执
+//- (void)onSocketConnectSuccess
+//{
+//    
+//}
+//
+//#pragma mark - 连接断开回执
+//- (void)onSocketDisconnect:(NSError *)error
+//{
+//    
+//}
+
+#pragma mark - <RXIMMessageDelegate>
 #pragma mark - 消息接收回执
 - (void)receiveMessage:(NSArray<RXIMMessage *> *)msgs
 {
@@ -761,7 +780,7 @@ static NSString *target;
         RXIMMessage *msg = msgObj.messages.firstObject;
         [[RXIMChatService sharedSDK] getServerHistoryMessageWithMsgId:msg.msgId target:self.conversationId limit:30];
     }
-}
+}  
 
 #pragma mark - <RXIMSessionServiceDelegate>
 #pragma mark - 会话最后一条消息变更

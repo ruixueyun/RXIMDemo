@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CBD114BF06B41B057235C79 /* Pods_RXIMSdkDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AB7BFAA377BB003081EDD8 /* Pods_RXIMSdkDemo.framework */; };
-		B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */; };
+		B56508A128C5E1F700B4EE92 /* RXIMSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56508A028C5E1F700B4EE92 /* RXIMSdk.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		B5BB669028BF2B900084072E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB668F28BF2B900084072E /* AppDelegate.m */; };
 		B5BB669628BF2B900084072E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB669528BF2B900084072E /* ViewController.m */; };
 		B5BB669928BF2B900084072E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BB669728BF2B900084072E /* Main.storyboard */; };
@@ -411,6 +411,57 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"resolv\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AliyunOSSiOS\"",
+					"-framework",
+					"\"BSBacktraceLogger\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"DoraemonKit\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"Protobuf\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RXNetworkingKit\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WCDB\"",
+					"-framework",
+					"\"YYCache\"",
+					"-framework",
+					"\"YYModel\"",
+					"-framework",
+					"\"fishhook\"",
+					"-framework",
+					"\"sqlcipher\"",
+					"-framework",
+					"\"sqliterk\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RXIMSdkDemo.RXIMSdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
