@@ -18,7 +18,7 @@
 
 static NSString *target;
 
-@interface ViewController ()<RXIMMessageDelegate,RXIMSessionServiceDelegate>
+@interface ViewController ()<RXIMSocketDelegate,RXIMMessageDelegate,RXIMSessionServiceDelegate>
 
 @property (nonatomic, strong) RXIMMessage *msgObj;
 @property (nonatomic, strong) NSString *conversationId;
@@ -34,9 +34,12 @@ static NSString *target;
     [super viewDidLoad];
     self.userId = @"自己的用户id";
     self.targetId = @"对方的用户id";
+    __weak typeof(self) weakself = self;
     [[RXIMSDKManager sharedSDK] loginRXIMSDKWithUserId:self.userId accessToken:@"访问令牌" refreshToken:@"刷新令牌" aesKey:@"AES密钥" complete:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            [RXIMSocketEngine sharedSDK].delegate = weakself;//注册连接监听
+            [[RXIMSocketEngine sharedSDK] onStart];//启动连接引擎
         }else{
             [SVProgressHUD showErrorWithStatus:@"登录失败"];
         }
@@ -695,6 +698,17 @@ static NSString *target;
 {
     RXIMMessage *msg = [[RXIMSessionService sharedSDK] getLastMsgWithCovId:self.conversationId];
     NSLog(@"%@",msg.msgId);
+}
+
+#pragma mark - <RXIMSocketDelegate>
+- (void)onSocketConnectSuccess
+{
+    NSLog(@"连接成功");
+}
+
+- (void)onSocketDisconnect:(NSError *)error
+{
+    NSLog(@"连接断开");
 }
 
 #pragma mark -- <RXIMMessageDelegate>

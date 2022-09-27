@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		K1f2AE3yNM8D4wE6Op5b8hxHtGQ=
-		</data>
 		<key>Headers/RXIMChatService.h</key>
 		<data>
 		KvOe+bBo82vvlxbwf5Qte/QV34E=
@@ -70,7 +66,7 @@
 		</data>
 		<key>Headers/RXIMSDKManager.h</key>
 		<data>
-		xdKCHhUohLXfY3QHFoqA1zCTsyU=
+		zUKkAf2RHIEJlwLpVW72UC9Jdh0=
 		</data>
 		<key>Headers/RXIMSdk.h</key>
 		<data>
@@ -272,11 +268,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xdKCHhUohLXfY3QHFoqA1zCTsyU=
+			zUKkAf2RHIEJlwLpVW72UC9Jdh0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z25SC1Hh7WGDnoH7mAZSRxPOGbVFhwPFFS6d6zPcQDw=
+			poN7YV2eUgcFT9NGSLfxEVFM1hbX8n67iU742Ja74zc=
 			</data>
 		</dict>
 		<key>Headers/RXIMSdk.h</key>

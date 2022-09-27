@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 登陆IM
- * @param userId 用户标识符，可以自定义或直接用瑞雪 OpenID
+ * @param userId 用户标识符
  * @param accessToken 访问令牌
  * @param refreshToken 刷新令牌
  * @param aesKey AES 密钥
