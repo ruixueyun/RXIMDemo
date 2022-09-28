@@ -456,10 +456,10 @@ static NSString *target;
     RXIMReferenceMsg *referenceMsg = [[RXIMReferenceMsg alloc]init];
     referenceMsg.sender = self.msgObj.sender;
     referenceMsg.type  = self.msgObj.type;
-    referenceMsg.msgId = self.msgObj.msgId;
+    referenceMsg.msg_id = self.msgObj.msgId;
     referenceMsg.content = self.msgObj.content;
-    referenceMsg.milliTs = self.msgObj.milliTs;
-    referenceMsg.subType = self.msgObj.subType;
+    referenceMsg.milli_ts = self.msgObj.milliTs;
+    referenceMsg.sub_type = self.msgObj.subType;
     
     RXIMReplyMsg *replyMsg = [[RXIMReplyMsg alloc]init];
     replyMsg.type = RXIMMessageType_Text;
