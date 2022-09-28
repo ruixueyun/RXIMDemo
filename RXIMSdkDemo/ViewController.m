@@ -37,12 +37,12 @@ static NSString *target;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSString *userPhoneName = [[UIDevice currentDevice] name];
-    if ([userPhoneName isEqualToString:@"陈汉的iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone1"]) {
-        self.userId = @"testuser_9999";
-        self.targetId = @"testuser_8888";
+    if ([userPhoneName isEqualToString:@"iPhone 13"] || [userPhoneName isEqualToString:@"iPhone1"]) {
+        self.userId = @"testuser1_8888";
+        self.targetId = @"testuser1_9999";
     }else if([userPhoneName isEqualToString:@"iPhone (2)"] || [userPhoneName isEqualToString:@"iPhone 12"]){
-        self.userId = @"testuser_9999";
-        self.targetId = @"testuser_7777";
+        self.userId = @"testuser1_9999";
+        self.targetId = @"testuser1_7777";
 //        self.userId = @"1051021";
 //        self.targetId = @"1051022";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjMxMzk4MDV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjhkODBkYWQyLTQyODEtNDZjNi1hNTk3LTVmNTIyMmYzNzg1YyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiJmYmMyNzVjYjcwZWZlZDk4MzIyOWY4Y2EyM2Q2OTEzZDk3MTE1NTRlNzlkYmFjZTU1MzM2MWUwMTQ3NzNkMTk3IiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjEifX0.ERI1PDhY_O-FG8B9enu3TdiUk73HyMLlhRCPPGfOa8o";
@@ -50,8 +50,8 @@ static NSString *target;
         self.aesKey = @"fbc275cb70efed983229f8ca23d6913d9711554e79dbace553361e014773d197";
         
     }else{
-        self.userId = @"testuser_7777";
-        self.targetId = @"testuser_9999";
+        self.userId = @"testuser1_7777";
+        self.targetId = @"testuser1_9999";
 //        self.userId = @"1051022";
 //        self.targetId = @"1051021";
         self.accessToken = @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdGFuZGFyZENsYWltcyI6eyJleHAiOjE2NjMxMzk4NjV9LCJBY2NvdW50SUQiOjAsIlVzZXJJRCI6MCwiQ1BJRCI6MTAwMDAwNSwiVG9rZW5JRCI6IjA4OWFlZjk2LTc3YmQtNDE4Yy05Mzc4LWI3ZTcxNWU4YjdmYyIsIlByb2R1Y3RJRCI6IjQyMyIsIkFwcElEIjoiIiwiZXh0Ijp7Imltc19hZXNrZXkiOiIxYmU4NTY0ODA0Nzc2YmQ1ZDdjOWI1MWVlOTU5OTAxMjA0YjIxMGIzYjhhMDUxOTA4NGVkODQ3ZWM4Zjc0YTliIiwiaW1zX2NoYW5uZWxpZCI6IjEwMiIsImltc19jbGllbnR0eXBlIjoiMTMxMzI5IiwiaW1zX2RldmljZWNvZGUiOiIwY2FlMzhmYmM1N2FhODU0IiwiaW1zX3VzZXJpZCI6IjEwNTEwMjIifX0.OghEYY0jayhmhoENsfontS6d8v4-VkwiMekSx4O5PIc";
@@ -69,7 +69,7 @@ static NSString *target;
             [SVProgressHUD showErrorWithStatus:@"登录失败"];
         }
     }];
-    self.conversationId = @"$2$test998899";
+    self.conversationId = @"$2$test998877";
     self.covType = RXIMSessionType_group;
     [self setUI];
 //    [[RXIMSDKManager sharedSDK] logout];
@@ -284,7 +284,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test9988";
+    self.conversationId = @"$2$test998877";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
@@ -293,7 +293,7 @@ static NSString *target;
 #pragma mark - 切换渠道
 -(void)sendChannelAction
 {
-    self.conversationId = @"$4$test9876";
+    self.conversationId = @"$4$test98765";
 //    self.conversationId = @"$4$worldChannel";
     self.covType = RXIMSessionType_channel;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
@@ -484,10 +484,10 @@ static NSString *target;
     RXIMReferenceMsg *referenceMsg = [[RXIMReferenceMsg alloc]init];
     referenceMsg.sender = self.msgObj.sender;
     referenceMsg.type  = self.msgObj.type;
-    referenceMsg.msgId = self.msgObj.msgId;
+    referenceMsg.msg_id = self.msgObj.msgId;
     referenceMsg.content = self.msgObj.content;
-    referenceMsg.milliTs = self.msgObj.milliTs;
-    referenceMsg.subType = self.msgObj.subType;
+    referenceMsg.milli_ts = self.msgObj.milliTs;
+    referenceMsg.sub_type = self.msgObj.subType;
     
     RXIMReplyMsg *replyMsg = [[RXIMReplyMsg alloc]init];
     replyMsg.type = RXIMMessageType_Text;
@@ -730,18 +730,18 @@ static NSString *target;
 
 #pragma mark - 相关代理操作
 
-//#pragma mark - <RXIMSocketDelegate>
-//#pragma mark - 连接成功回执
-//- (void)onSocketConnectSuccess
-//{
-//    
-//}
-//
-//#pragma mark - 连接断开回执
-//- (void)onSocketDisconnect:(NSError *)error
-//{
-//    
-//}
+#pragma mark - <RXIMSocketDelegate>
+#pragma mark - 连接成功回执
+- (void)onSocketConnectSuccess
+{
+    
+}
+
+#pragma mark - 连接断开回执
+- (void)onSocketDisconnect:(NSError *)error
+{
+    
+}
 
 #pragma mark - <RXIMMessageDelegate>
 #pragma mark - 消息接收回执

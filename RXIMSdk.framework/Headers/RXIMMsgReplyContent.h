@@ -17,13 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 /** 消息内容 */
 @property (nonatomic, strong) id content;
 /** 服务端唯一消息号 */
-@property (nonatomic, copy) NSString *msgId;
+@property (nonatomic, copy) NSString *msg_id;
 /** 引用消息的毫秒时间戳 */
-@property (nonatomic, assign) NSInteger milliTs;
+@property (nonatomic, assign) NSInteger milli_ts;
 /** 引用消息类型 */
 @property (nonatomic, assign) RXIMMessageType type;
 /** 引用消息子类型 */
-@property (nonatomic, assign) NSInteger subType;
+@property (nonatomic, assign) NSInteger sub_type;
 
 @end
 
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 回复的消息类型 */
 @property (nonatomic, assign) NSInteger type;
 /** 回复的消息子类型 */
-@property (nonatomic, assign) NSInteger subType;
+@property (nonatomic, assign) NSInteger sub_type;
 /** 回复的消息内容 */
 @property (nonatomic, strong) id content;
 

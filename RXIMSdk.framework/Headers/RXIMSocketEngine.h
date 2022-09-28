@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
  * IM连接监听
  */
 @protocol RXIMSocketDelegate <NSObject>
-@optional
 /**
  * 连接成功
  */

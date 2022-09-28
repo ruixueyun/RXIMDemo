@@ -24,8 +24,9 @@
     [[DoraemonManager shareInstance] install];
 #endif
     //IM初始化
-    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 clientType:262657 version:@"v1.0.0" baseUrl:@"http://ruixue.weiletest.com"];
+//    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 clientType:262657 version:@"v1.0.0" baseUrl:@"http://ruixue.weiletest.com"];
 //    [[RXIMSDKManager sharedSDK] initWithProductId:@"423" channelId:@"102" cpid:1000005 clientType:262657 version:@"v1.0.0" baseUrl:@"https://rx-api.weilemks.com"];
+    [[RXIMSDKManager sharedSDK] initWithProductId:@"test_product" channelId:@"test_channel" cpid:1000000 clientType:262657 version:@"v1.0.0" baseUrl:@"https://api.demo.ruixueyun.com"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

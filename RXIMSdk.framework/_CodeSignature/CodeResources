@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/RXIMMsgReplyContent.h</key>
 		<data>
-		rpRq+xTcrqTXLcLyuDi9c3drTsU=
+		UTQUQvkGa2cMS0hhKz3DuvScZLo=
 		</data>
 		<key>Headers/RXIMMsgTextContent.h</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Headers/RXIMSocketEngine.h</key>
 		<data>
-		vCmLByqJLFRoufCsoP0rV9JEb5s=
+		0ra3EGS6CYFI2+o1qdWmdILsUrs=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -243,11 +243,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rpRq+xTcrqTXLcLyuDi9c3drTsU=
+			UTQUQvkGa2cMS0hhKz3DuvScZLo=
 			</data>
 			<key>hash2</key>
 			<data>
-			zZX12j6ZIKRkHutq0lVHZWy/tIzGyeLbKSDmpfD/jfU=
+			8int/a+F2iEqdiJ3MKtO/6Qkzn53pENSc9Wz7pn/pLA=
 			</data>
 		</dict>
 		<key>Headers/RXIMMsgTextContent.h</key>
@@ -342,11 +342,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vCmLByqJLFRoufCsoP0rV9JEb5s=
+			0ra3EGS6CYFI2+o1qdWmdILsUrs=
 			</data>
 			<key>hash2</key>
 			<data>
-			FpS0vcZI/e9GBkyGIGm1zlB4sO54JG6iRXCv2iKDosw=
+			SGUSA1dHGSgnwsLGQC9nbBzxYVV2KD+mjo+xgtCGLx4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
