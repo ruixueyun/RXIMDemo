@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 子消息类型 type == RXIMMessageType_Custom 有效 设置需大于100，100以下供sdk内部使用 */
 @property(nonatomic, assign) NSInteger subType;
 
-/** 消息选项 位运算 RXIMMsgOption组合 默认：7 */
+/** 消息选项 位运算 RXIMMsgOption组合 */
 @property (nonatomic, assign) NSInteger option;
 
 /** 接收人列表，单聊必须为空；群聊表示 @ 用户列表；自定义单聊表示实际接收人 UserID 清单；*/
