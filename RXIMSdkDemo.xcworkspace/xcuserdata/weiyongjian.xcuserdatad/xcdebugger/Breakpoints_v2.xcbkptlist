@@ -192,7 +192,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "450"
             endingLineNumber = "450"
-            landmarkName = "-sendReplyMsgAction"
+            landmarkName = "-sendFileMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "352"
             endingLineNumber = "352"
-            landmarkName = "-sendAudioMsgAction"
+            landmarkName = "-sendImgMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,8 +256,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "420"
             endingLineNumber = "420"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            landmarkName = "-sendVideoMsgAction"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -272,7 +272,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "644"
             endingLineNumber = "644"
-            landmarkName = "-updateUserInfoConvAction"
+            landmarkName = "-joinConvAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -288,7 +288,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "725"
             endingLineNumber = "725"
-            landmarkName = "-sendMessageSuccess:"
+            landmarkName = "-getConvLastMsg"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -336,7 +336,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "321"
             endingLineNumber = "321"
-            landmarkName = "-sendImgMsgAction"
+            landmarkName = "-sendTextMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -463,7 +463,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "769"
-            endingLineNumber = "769">
+            endingLineNumber = "769"
+            landmarkName = "-sendMessageFailure:error:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,7 +496,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "514"
             endingLineNumber = "514"
-            landmarkName = "-forwardMsgMsgAction"
+            landmarkName = "-sendReplyMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -558,8 +560,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "526"
             endingLineNumber = "526"
-            landmarkName = "-getSerHistoryMsgAction"
-            landmarkType = "7">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -622,7 +624,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "337"
             endingLineNumber = "337"
-            landmarkName = "-sendAudioMsgAction"
+            landmarkName = "-sendImgMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -654,7 +656,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "430"
             endingLineNumber = "430"
-            landmarkName = "-sendFileMsgAction"
+            landmarkName = "-sendVideoMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -702,7 +704,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "377"
             endingLineNumber = "377"
-            landmarkName = "-sendLocationMsgAction"
+            landmarkName = "-sendAudioMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -782,7 +784,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "729"
             endingLineNumber = "729"
-            landmarkName = "-sendMessageSuccess:"
+            landmarkName = "-getConvLastMsg"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -862,7 +864,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "736"
             endingLineNumber = "736"
-            landmarkName = "-sendMessageFailure:error:"
+            landmarkName = "-onSocketConnectSuccess"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -877,7 +879,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "783"
-            endingLineNumber = "783">
+            endingLineNumber = "783"
+            landmarkName = "-historyMessage:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -891,7 +895,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "789"
-            endingLineNumber = "789">
+            endingLineNumber = "789"
+            landmarkName = "-onSessionLastMessageChanged:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -906,8 +912,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "682"
             endingLineNumber = "682"
-            landmarkName = "-clearUnreadCount"
-            landmarkType = "7">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -938,7 +944,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "631"
             endingLineNumber = "631"
-            landmarkName = "-leaveConvAction"
+            landmarkName = "-getConvInfoAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -954,8 +960,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "540"
             endingLineNumber = "540"
-            landmarkName = "ViewController"
-            landmarkType = "3">
+            landmarkName = "-forwardMsgMsgAction"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -970,7 +976,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "697"
             endingLineNumber = "697"
-            landmarkName = "-getConvLastMsg"
+            landmarkName = "-getConvListAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -986,7 +992,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "743"
             endingLineNumber = "743"
-            landmarkName = "-historyMessage:"
+            landmarkName = "-onSocketDisconnect:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1018,8 +1024,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "630"
             endingLineNumber = "630"
-            landmarkName = "-leaveConvAction"
-            landmarkType = "7">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1033,7 +1039,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "772"
-            endingLineNumber = "772">
+            endingLineNumber = "772"
+            landmarkName = "-sendMessageFailure:error:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1192,7 +1200,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "591"
             endingLineNumber = "591"
-            landmarkName = "-updateConvInfoAction"
+            landmarkName = "-creatConvAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1208,8 +1216,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "758"
             endingLineNumber = "758"
-            landmarkName = "-onSessionUnreadCountChanged:"
-            landmarkType = "7">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1224,7 +1232,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "-setUI"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1416,8 +1424,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "603"
             endingLineNumber = "603"
-            landmarkName = "-getConvInfoAction"
-            landmarkType = "7">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1528,7 +1536,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
             endingLineNumber = "288"
-            landmarkName = "-sendTextMsgAction"
+            landmarkName = "-sendGroupAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1544,7 +1552,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "331"
             endingLineNumber = "331"
-            landmarkName = "-sendImgMsgAction"
+            landmarkName = "-sendTextMsgAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1848,7 +1856,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "751"
             endingLineNumber = "751"
-            landmarkName = "-onSessionLastMessageChanged:"
+            landmarkName = "-receiveMessage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1880,7 +1888,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "282"
             endingLineNumber = "282"
-            landmarkName = "-sendCustomAction"
+            landmarkName = "-sendSingleAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2120,7 +2128,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "-setUI"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
