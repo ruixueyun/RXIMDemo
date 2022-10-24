@@ -18,7 +18,7 @@ target 'RXIMSdkDemo' do
     pod 'AliyunOSSiOS'
     pod 'SVProgressHUD'
     pod 'WCDB'  	
-    pod 'RXIMSDK-iOS'
+#    pod 'RXIMSDK-iOS'
     #调试工具
     pod 'DoraemonKit/Core', '~> 2.0.0', :configurations => ['Debug']
 end

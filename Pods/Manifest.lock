@@ -22,7 +22,6 @@ PODS:
   - fishhook (0.2)
   - MJExtension (3.4.1)
   - Protobuf (3.21.5)
-  - RXIMSDK-iOS (1.0.16)
   - RXNetworkingKit (1.2.3.1):
     - AFNetworking
   - SQLiteRepairKit (1.2.2):
@@ -40,7 +39,6 @@ DEPENDENCIES:
   - DoraemonKit/Core (~> 2.0.0)
   - MJExtension
   - Protobuf
-  - RXIMSDK-iOS
   - RXNetworkingKit (~> 1.2.3.1)
   - SVProgressHUD
   - WCDB
@@ -56,7 +54,6 @@ SPEC REPOS:
     - fishhook
     - MJExtension
     - Protobuf
-    - RXIMSDK-iOS
     - RXNetworkingKit
     - SQLiteRepairKit
     - SVProgressHUD
@@ -73,7 +70,6 @@ SPEC CHECKSUMS:
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   Protobuf: 7504b04fffcf6662ad629694db8231f5e744327f
-  RXIMSDK-iOS: 3a015dd8e622135d2c32cd0ce416744c8859d498
   RXNetworkingKit: 593e642b1059454a46ddec135f3f4f0bd8be3d28
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -82,6 +78,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 4a55f0ab57a2b918bc1351b18a15466b597599c7
+PODFILE CHECKSUM: 846b81bed866784ad240d8b80172fc394cde93bc
 
 COCOAPODS: 1.11.3

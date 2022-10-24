@@ -43,6 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedSDK;
 
 /** 服务器操作 */
+
+/**
+ * 同步消息
+ */
+-(void)syncMessage;
+
 /**
  * 发送消息
  * @param sendMessage 发送的消息对象
