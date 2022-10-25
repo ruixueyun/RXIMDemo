@@ -257,7 +257,7 @@ static NSString *target;
 #pragma mark - 切换群聊
 -(void)sendGroupAction
 {
-    self.conversationId = @"$2$test9988";
+    self.conversationId = @"$2$test998877";
     self.covType = RXIMSessionType_group;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换群聊成功"];
@@ -266,7 +266,8 @@ static NSString *target;
 #pragma mark - 切换渠道
 -(void)sendChannelAction
 {
-    self.conversationId = @"$4$test888";
+    self.conversationId = @"$4$test98765";
+//    self.conversationId = @"$4$worldChannel";
     self.covType = RXIMSessionType_channel;
     [self.covIdLab setText:[NSString stringWithFormat:@"会话id：%@",self.conversationId]];
     [SVProgressHUD showSuccessWithStatus:@"切换渠道成功"];
@@ -285,14 +286,14 @@ static NSString *target;
 - (void)sendTextMsgAction
 {
     RXIMMsgTextContent *textContent = [[RXIMMsgTextContent alloc] init];
-    textContent.text = @"text111";
+    textContent.text = @"文本消息";
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
-    msg.conversationId = self.conversationId;
+    msg.sessionID = self.conversationId;
     msg.content = textContent;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Text;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Text;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -319,11 +320,11 @@ static NSString *target;
     imgContent.height = image.size.height;
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = imgContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Image;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Image;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -344,11 +345,11 @@ static NSString *target;
     audioContent.audio_type = @"amr";
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = audioContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Audio;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Audio;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -370,11 +371,11 @@ static NSString *target;
     geoContent.cover_data = geoData;
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = geoContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Position;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Position;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -404,11 +405,11 @@ static NSString *target;
     
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = videoContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Video;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Video;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -431,11 +432,11 @@ static NSString *target;
     
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = fileContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_File;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_File;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -454,15 +455,15 @@ static NSString *target;
     }
     RXIMMsgReplyContent *replyContent = [[RXIMMsgReplyContent alloc]init];
     RXIMReferenceMsg *referenceMsg = [[RXIMReferenceMsg alloc]init];
-    referenceMsg.sender = self.msgObj.sender;
-    referenceMsg.type  = self.msgObj.type;
-    referenceMsg.msg_id = self.msgObj.msgId;
+    referenceMsg.fromId = self.msgObj.fromId;
+    referenceMsg.msgType  = self.msgObj.msgType;
+    referenceMsg.msgId = self.msgObj.msgId;
     referenceMsg.content = self.msgObj.content;
-    referenceMsg.milli_ts = self.msgObj.milliTs;
-    referenceMsg.sub_type = self.msgObj.subType;
+    referenceMsg.timestamp = self.msgObj.timestamp;
+    referenceMsg.subType = self.msgObj.subType;
     
     RXIMReplyMsg *replyMsg = [[RXIMReplyMsg alloc]init];
-    replyMsg.type = RXIMMessageType_Text;
+    replyMsg.msgType = RXIMMessageType_Text;
     RXIMMsgTextContent *textContent = [[RXIMMsgTextContent alloc]init];
     textContent.text = @"reply msg";
     replyMsg.content = textContent;
@@ -471,11 +472,11 @@ static NSString *target;
     replyContent.reply = replyMsg;
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = replyContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Reply;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Reply;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -700,24 +701,31 @@ static NSString *target;
     NSLog(@"%@",msg.msgId);
 }
 
+#pragma mark - 相关代理操作
+
 #pragma mark - <RXIMSocketDelegate>
+#pragma mark - 连接成功回执
 - (void)onSocketConnectSuccess
 {
-    NSLog(@"连接成功");
+    
 }
 
+#pragma mark - 连接断开回执
 - (void)onSocketDisconnect:(NSError *)error
 {
-    NSLog(@"连接断开");
+    
 }
 
-#pragma mark -- <RXIMMessageDelegate>
+#pragma mark - <RXIMMessageDelegate>
 #pragma mark - 消息接收回执
 - (void)receiveMessage:(NSArray<RXIMMessage *> *)msgs
 {
     NSLog(@"接收消息");
     self.msgObj = msgs.lastObject;
-    [SVProgressHUD showSuccessWithStatus:@"接收消息成功"];
+    for (RXIMMessage *msg in msgs) {
+        [SVProgressHUD showSuccessWithStatus:@"接收消息成功"];
+    }
+    
 }
 
 #pragma mark - <RXIMMessageDelegate>
@@ -726,7 +734,7 @@ static NSString *target;
 {
     NSLog(@"消息发送成功");
     self.msgObj = msgObj;
-    [SVProgressHUD showSuccessWithStatus:@"发送成功"];
+    [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@ 发送成功",msgObj.msgId]];
 }
 
 #pragma mark - 消息发送失败回执

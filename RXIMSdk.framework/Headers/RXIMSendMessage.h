@@ -13,13 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RXIMSendMessage : NSObject
 
 /** 会话 ID，个人（UserIDA < UserIDB，字典序比较）：$1$UserIDA:UserIDB；群：$2$群ID */
-@property(nonatomic, copy) NSString *conversationId;
+@property(nonatomic, copy) NSString *sessionID;
 
 /** 会话类型 */
-@property (nonatomic, assign) RXIMSessionType covType;
+@property (nonatomic, assign) RXIMSessionType sessionType;
 
 /** 消息类型 */
-@property(nonatomic, assign) RXIMMessageType type;
+@property(nonatomic, assign) RXIMMessageType msgType;
 
 /** 子消息类型 type == RXIMMessageType_Custom 有效 设置需大于100，100以下供sdk内部使用 */
 @property(nonatomic, assign) NSInteger subType;
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger option;
 
 /** 接收人列表，单聊必须为空；群聊表示 @ 用户列表；自定义单聊表示实际接收人 UserID 清单；*/
-@property (nonatomic, copy) NSArray *receiversArray;
+@property (nonatomic, copy) NSArray *receivers;
 
 /** 扩展信息 */
 @property(nonatomic, copy) NSDictionary<NSString *,NSString *> *ext;
