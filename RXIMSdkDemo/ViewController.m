@@ -315,12 +315,12 @@ static NSString *target;
     RXIMMsgTextContent *textContent = [[RXIMMsgTextContent alloc] init];
     textContent.text = @"文本消息";
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
-    msg.conversationId = self.conversationId;
+    msg.sessionID = self.conversationId;
     msg.content = textContent;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Text;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Text;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -347,11 +347,11 @@ static NSString *target;
     imgContent.height = image.size.height;
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = imgContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Image;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Image;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message, RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -372,11 +372,11 @@ static NSString *target;
     audioContent.audio_type = @"amr";
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = audioContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Audio;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Audio;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error) {
         if (!error) {
             NSLog(@"消息处理成功");
@@ -398,11 +398,11 @@ static NSString *target;
     geoContent.cover_data = geoData;
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = geoContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Position;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Position;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -432,11 +432,11 @@ static NSString *target;
     
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = videoContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Video;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Video;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -459,11 +459,11 @@ static NSString *target;
     
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = fileContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_File;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_File;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");
@@ -482,15 +482,15 @@ static NSString *target;
     }
     RXIMMsgReplyContent *replyContent = [[RXIMMsgReplyContent alloc]init];
     RXIMReferenceMsg *referenceMsg = [[RXIMReferenceMsg alloc]init];
-    referenceMsg.sender = self.msgObj.sender;
-    referenceMsg.type  = self.msgObj.type;
-    referenceMsg.msg_id = self.msgObj.msgId;
+    referenceMsg.fromId = self.msgObj.fromId;
+    referenceMsg.msgType  = self.msgObj.msgType;
+    referenceMsg.msgId = self.msgObj.msgId;
     referenceMsg.content = self.msgObj.content;
-    referenceMsg.milli_ts = self.msgObj.milliTs;
-    referenceMsg.sub_type = self.msgObj.subType;
+    referenceMsg.timestamp = self.msgObj.timestamp;
+    referenceMsg.subType = self.msgObj.subType;
     
     RXIMReplyMsg *replyMsg = [[RXIMReplyMsg alloc]init];
-    replyMsg.type = RXIMMessageType_Text;
+    replyMsg.msgType = RXIMMessageType_Text;
     RXIMMsgTextContent *textContent = [[RXIMMsgTextContent alloc]init];
     textContent.text = @"reply msg";
     replyMsg.content = textContent;
@@ -499,11 +499,11 @@ static NSString *target;
     replyContent.reply = replyMsg;
     RXIMSendMessage *msg = [[RXIMSendMessage alloc] init];
     msg.content = replyContent;
-    msg.conversationId = self.conversationId;
-    msg.covType = self.covType;
-    msg.type = RXIMMessageType_Reply;
+    msg.sessionID = self.conversationId;
+    msg.sessionType = self.covType;
+    msg.msgType = RXIMMessageType_Reply;
     msg.option = 7;
-    msg.receiversArray = [self getReceiveAryWithCovType];
+    msg.receivers = [self getReceiveAryWithCovType];
     [[RXIMChatService sharedSDK] sendMessage:msg completionHandler:^(RXIMMessage * _Nullable message,RXIMError *error){
         if (!error) {
             NSLog(@"消息处理成功");

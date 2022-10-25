@@ -83,19 +83,22 @@ typedef enum : NSUInteger {
 @interface RXIMMessage : NSObject
 
 /** 发送人id */
-@property(nonatomic, copy) NSString *sender;
+@property(nonatomic, copy) NSString *fromId;
+
+/** 接收人id */
+@property(nonatomic, copy) NSString *toId;
 
 /** 会话id */
-@property(nonatomic, copy) NSString *conversationId;
+@property(nonatomic, copy) NSString *sessionID;
 
 /** 接收人列表，单聊必须为空；群聊表示 @ 用户列表；自定义单聊表示实际接收人 UserID 清单；*/
-@property (nonatomic, copy) NSMutableArray *receiversArray;
+@property (nonatomic, copy) NSMutableArray *receivers;
 
 /** 会话类型 */
-@property (nonatomic, assign) RXIMSessionType covType;
+@property (nonatomic, assign) RXIMSessionType sessionType;
 
 /** 消息类型 */
-@property(nonatomic, assign) RXIMMessageType type;
+@property(nonatomic, assign) RXIMMessageType msgType;
 
 /** 消息状态 */
 @property(nonatomic, assign) RXIMMsgStatus status;
@@ -116,13 +119,13 @@ typedef enum : NSUInteger {
 @property(nonatomic, copy) NSString *msgId;
 
 /** 消息发送者本地消息序号, 仅在客户端发送消息时有值 */
-@property(nonatomic, assign) NSInteger uuid;
+@property(nonatomic, assign) NSInteger localId;
 
 /** 当前用户同步序列号 */
 @property (nonatomic,assign) NSInteger inboxId;
 
 /** 时间戳, 精确到毫秒 */
-@property(nonatomic, assign) NSInteger milliTs;
+@property(nonatomic, assign) NSInteger timestamp;
 
 /** 推送信息(json) */
 @property(nonatomic, copy) NSString *pushBody;
