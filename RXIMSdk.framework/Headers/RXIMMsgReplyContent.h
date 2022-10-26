@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 发送人id */
 @property (nonatomic, copy) NSString *fromId;
 /** 消息内容 */
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, strong) id content;
 /** 服务端唯一消息号 */
 @property (nonatomic, copy) NSString *msgId;
 /** 引用消息的毫秒时间戳 */
@@ -30,11 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RXIMReplyMsg : NSObject
 
 /** 回复的消息类型 */
-@property (nonatomic, assign) RXIMMessageType msgType;
+@property (nonatomic, assign) NSInteger msgType;
 /** 回复的消息子类型 */
 @property (nonatomic, assign) NSInteger subType;
 /** 回复的消息内容 */
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, strong) id content;
 
 @end
 

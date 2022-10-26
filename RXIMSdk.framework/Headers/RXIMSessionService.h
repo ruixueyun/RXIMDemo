@@ -69,21 +69,21 @@ NS_ASSUME_NONNULL_BEGIN
  * 删除或解散会话
  * @param covId 会话id
  */
-- (void)deleteConversation:(NSString * _Nonnull)covId
+- (void)disbandConversation:(NSString * _Nonnull)covId
          completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
  * 获取会话信息
  * @param covId 会话id
  */
-- (void)getConversationInfo:(NSString * _Nonnull)covId
+- (void)fetchConversationInfo:(NSString * _Nonnull)covId
           completionHandler:(void (^)(RXIMSession *session,RXIMError *error))completionHandler;
 
 /**
  * 加入会话
- * @param joinSessions 加入会话数组
+ * @param joinSession 加入会话数组
  */
-- (void)joinConversations:(RXIMJoinSession * _Nonnull)joinSessions
+- (void)joinConversation:(RXIMJoinSession * _Nonnull)joinSession
         completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param option 选项
  * @param ext 扩展字段
  */
-- (void)updateUserInfoToConversation:(NSString * _Nonnull)covId
+- (void)updateUserInfoInConversation:(NSString * _Nonnull)covId
                               option:(NSInteger)option
                                  ext:(NSDictionary<NSString *,NSString *> * _Nullable)ext
                     completionHandler:(void (^)(RXIMError *error))completionHandler;
@@ -107,13 +107,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 获取服务器会话列表
  */
-- (void)getConversationList:(void (^)(NSArray<RXIMSession *> *sessionInfoAry,RXIMError *error))completionHandler;
+- (void)fetchConversationList:(void (^)(NSArray<RXIMSession *> *sessionInfoAry,RXIMError *error))completionHandler;
 
 /** 本地数据库操作 */
 /**
  * 获取本地所有会话列表
  */
--(NSArray *)getLocalConversationList;
+-(NSArray *)getConversationList;
 
 /**
  * 根据会话id获取会话
@@ -126,13 +126,13 @@ NS_ASSUME_NONNULL_BEGIN
  * 获取会话最后一条消息
  * @param covId 会话id
  */
--(RXIMMessage *)getLastMsgWithCovId:(NSString * _Nonnull)covId;
+-(RXIMMessage *)getLatestMessage:(NSString * _Nonnull)covId;
 
 /**
  * 清空会话的未读消息数
- * @param sessionId 会话id
+ * @param covId 会话id
  */
-- (void)clearRedPoint:(NSString * _Nonnull)sessionId
+- (void)clearUnReadCount:(NSString * _Nonnull)covId
              complete:(void(^)(RXIMError *error))complete;
 
 
