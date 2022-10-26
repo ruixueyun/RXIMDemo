@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RXIMChatService.h</key>
 		<data>
-		aDsw7ayT1aHnZis7wkeXaqgzfgg=
+		924gdk9YR8tQ4r3BYNlUQi3/BN8=
 		</data>
 		<key>Headers/RXIMDownload.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/RXIMJoinSession.h</key>
 		<data>
-		8bFql9v1YUNqGPpX3NJ5Ul0JE0k=
+		MQQHsO1LyvDmaBVKiqJptULdAS8=
 		</data>
 		<key>Headers/RXIMMessage.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/RXIMMsgReplyContent.h</key>
 		<data>
-		qVMcyVoMRDo1Fyz2iOCKESjOM8E=
+		CYHZz3RQrSCO7B8ScorWY4s5mic=
 		</data>
 		<key>Headers/RXIMMsgTextContent.h</key>
 		<data>
@@ -82,11 +82,11 @@
 		</data>
 		<key>Headers/RXIMSession.h</key>
 		<data>
-		jf2n/aX7hJkYih5FQiSpRrcZg7E=
+		TL7EUyS61iHZ7qHPZCjA/2g3CoQ=
 		</data>
 		<key>Headers/RXIMSessionService.h</key>
 		<data>
-		Hqm8Rkc35IZLzBO/KR7ypvaShpA=
+		r0B/ma4tmnvKR4Z+rNA4vCKPI7w=
 		</data>
 		<key>Headers/RXIMSocketEngine.h</key>
 		<data>
@@ -107,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aDsw7ayT1aHnZis7wkeXaqgzfgg=
+			924gdk9YR8tQ4r3BYNlUQi3/BN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			odVwlZtsHVtWdKpluXUxqdm4S30YYLQoS2FgCXWo2ss=
+			ACIJplyO+A2Hy6Is56b+1iWAcZR4D4+nYi992jzgbSI=
 			</data>
 		</dict>
 		<key>Headers/RXIMDownload.h</key>
@@ -151,11 +151,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8bFql9v1YUNqGPpX3NJ5Ul0JE0k=
+			MQQHsO1LyvDmaBVKiqJptULdAS8=
 			</data>
 			<key>hash2</key>
 			<data>
-			0Qxy9+PHtxMOwWJztV+lqKf+iVGAGYoEjBT/nrE3Acg=
+			6WK2kTZ4kpwZW0QT7faTX/e0h3ZSC4LCpu2zZhl8F3I=
 			</data>
 		</dict>
 		<key>Headers/RXIMMessage.h</key>
@@ -239,11 +239,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qVMcyVoMRDo1Fyz2iOCKESjOM8E=
+			CYHZz3RQrSCO7B8ScorWY4s5mic=
 			</data>
 			<key>hash2</key>
 			<data>
-			u0xRI4wmhRMQHa3ljfvW3mD4d1ccL1igeEi1jZ+Lw4c=
+			6ABz1+jV9pvKogXhjtuaNe+JpCAvgD0tfKt4wfnD/rk=
 			</data>
 		</dict>
 		<key>Headers/RXIMMsgTextContent.h</key>
@@ -316,22 +316,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jf2n/aX7hJkYih5FQiSpRrcZg7E=
+			TL7EUyS61iHZ7qHPZCjA/2g3CoQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			W6ppfdeIkbwxSq//GkMmWAIn19Er3UzVE4diWPML6EQ=
+			Sw29V0rtNTvmhXmcg55i64N/acSdZu0rOb3GLDT8KJA=
 			</data>
 		</dict>
 		<key>Headers/RXIMSessionService.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Hqm8Rkc35IZLzBO/KR7ypvaShpA=
+			r0B/ma4tmnvKR4Z+rNA4vCKPI7w=
 			</data>
 			<key>hash2</key>
 			<data>
-			BSwZh/Vltqmn1HnIUKgBGVroORhpcMkazXmFsWQRIWg=
+			04x1kF3T8kiWryzcaxtNDNft79J6hdJ6Cr+6Ahh0FzA=
 			</data>
 		</dict>
 		<key>Headers/RXIMSocketEngine.h</key>

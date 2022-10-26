@@ -515,7 +515,7 @@ static NSString *target;
 #pragma mark - 发送已读消息
 - (void)sendReadMsgAction
 {
-    [[RXIMChatService sharedSDK] readMessage:self.msgObj completionHandler:^(RXIMError * _Nonnull error) {
+    [[RXIMChatService sharedSDK] hasReadMessage:self.msgObj completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             NSLog(@"消息处理成功");
         }else{
@@ -551,14 +551,14 @@ static NSString *target;
 #pragma mark - 获取服务器历史消息
 -(void)getSerHistoryMsgAction
 {
-    [[RXIMChatService sharedSDK] getServerHistoryMessageWithMsgId:self.msgObj.msgId target:self.conversationId limit:30];
+    [[RXIMChatService sharedSDK] fetchHistoryMessages:self.msgObj.msgId target:self.conversationId limit:30];
 }
 
 #pragma mark - 本地操作
 #pragma mark - 获取本地历史消息
 -(void)getLocalHistoryMsgAction
 {
-    [[RXIMChatService sharedSDK] getLocalHistoryMessageWithMsgId:nil target:self.conversationId sessionType:self.covType limit:10 completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages,RXIMError *error) {
+    [[RXIMChatService sharedSDK] getHistoryMessages:nil target:self.conversationId sessionType:self.covType limit:10 completionHandler:^(NSArray<RXIMMessage *> * _Nonnull messages,RXIMError *error) {
         if (!error) {
             NSLog(@"历史消息回执 count = %ld,%@",messages.count,messages);
         }
@@ -603,7 +603,7 @@ static NSString *target;
 #pragma mark - 删除会话
 -(void)deleteConvAction
 {
-    [[RXIMSessionService sharedSDK] deleteConversation:self.conversationId completionHandler:^(RXIMError * _Nonnull error) {
+    [[RXIMSessionService sharedSDK] disbandConversation:self.conversationId completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"删除会话成功"];
         }else{
@@ -630,7 +630,7 @@ static NSString *target;
 #pragma mark - 获取会话信息
 -(void)getConvInfoAction
 {
-    [[RXIMSessionService sharedSDK] getConversationInfo:self.conversationId completionHandler:^(RXIMSession * _Nonnull session, RXIMError * _Nonnull error) {
+    [[RXIMSessionService sharedSDK] fetchConversationInfo:self.conversationId completionHandler:^(RXIMSession * _Nonnull session, RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"获取会话成功"];
         }else{
@@ -643,8 +643,8 @@ static NSString *target;
 -(void)joinConvAction
 {
     RXIMJoinSession *joinSession = [[RXIMJoinSession alloc]init];
-    joinSession.conversation_id = self.conversationId;
-    [[RXIMSessionService sharedSDK] joinConversations:joinSession completionHandler:^(RXIMError * _Nonnull error) {
+    joinSession.sessionID = self.conversationId;
+    [[RXIMSessionService sharedSDK] joinConversation:joinSession completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"加入会话成功"];
         }else{
@@ -670,7 +670,7 @@ static NSString *target;
 -(void)updateUserInfoConvAction
 {
     NSDictionary *dic = @{@"isRead":@"1"};
-    [[RXIMSessionService sharedSDK] updateUserInfoToConversation:self.conversationId option:0 ext:dic completionHandler:^(RXIMError * _Nonnull error) {
+    [[RXIMSessionService sharedSDK] updateUserInfoInConversation:self.conversationId option:0 ext:dic completionHandler:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"更新会话内用户信息成功"];
         }else{
@@ -682,7 +682,7 @@ static NSString *target;
 #pragma mark - 获取服务器会话列表
 - (void)getServerSessionList
 {
-    [[RXIMSessionService sharedSDK] getConversationList:^(NSArray<RXIMSession *> * _Nonnull sessionAry, RXIMError * _Nonnull error) {
+    [[RXIMSessionService sharedSDK] fetchConversationList:^(NSArray<RXIMSession *> * _Nonnull sessionAry, RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"获取会话列表成功"];
         }else{
@@ -695,17 +695,17 @@ static NSString *target;
 #pragma mark - 获取本地会话列表
 -(void)getConvListAction
 {
-    NSArray *convList = [[RXIMSessionService sharedSDK] getLocalConversationList];
+    NSArray *convList = [[RXIMSessionService sharedSDK] getConversationList];
     NSLog(@"本地会话列表");
     for (RXIMSession *session in convList) {
-        NSLog(@"会话id = %@",session.conversation_id);
+        NSLog(@"会话id = %@",session.sessionID);
     }
 }
 
 #pragma mark - 清空会话未读消息数
 -(void)clearUnreadCount
 {
-    [[RXIMSessionService sharedSDK] clearRedPoint:self.conversationId complete:^(RXIMError * _Nonnull error) {
+    [[RXIMSessionService sharedSDK] clearUnReadCount:self.conversationId complete:^(RXIMError * _Nonnull error) {
         if (!error) {
             [SVProgressHUD showSuccessWithStatus:@"清空成功"];
         }else{
@@ -724,7 +724,7 @@ static NSString *target;
 #pragma mark - 获取会话最后一条消息
 -(void)getConvLastMsg
 {
-    RXIMMessage *msg = [[RXIMSessionService sharedSDK] getLastMsgWithCovId:self.conversationId];
+    RXIMMessage *msg = [[RXIMSessionService sharedSDK] getLatestMessage:self.conversationId];
     NSLog(@"%@",msg.msgId);
 }
 
@@ -778,7 +778,7 @@ static NSString *target;
     NSLog(@"历史消息回执 count = %ld",msgObj.count);
     if (!msgObj.isDone) {
         RXIMMessage *msg = msgObj.messages.firstObject;
-        [[RXIMChatService sharedSDK] getServerHistoryMessageWithMsgId:msg.msgId target:self.conversationId limit:30];
+        [[RXIMChatService sharedSDK] fetchHistoryMessages:msg.msgId target:self.conversationId limit:30];
     }
 }  
 

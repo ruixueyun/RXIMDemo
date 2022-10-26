@@ -82,7 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param message 已读的消息体
  * @param completionHandler 返回消息处理是否正常，发送成功以delegate方式回调。
  */
-- (void)readMessage:(RXIMMessage * _Nonnull)message completionHandler:(void (^)(RXIMError *error))completionHandler;
+- (void)hasReadMessage:(RXIMMessage * _Nonnull)message completionHandler:(void (^)(RXIMError *error))completionHandler;
 
 /**
  * 消息撤回
@@ -97,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param target 会话id
  * @param limit 查询数量，最多一次拉取50条
  */
-- (void)getServerHistoryMessageWithMsgId:(NSString * _Nullable)msgId
+- (void)fetchHistoryMessages:(NSString * _Nullable)msgId
                             target:(NSString * _Nonnull)target
                              limit:(NSInteger)limit;
 /** 本地数据库操作 */
@@ -109,7 +109,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param limit 查询数量
  * @param completionHandler 返回的消息数组。
  */
-- (void)getLocalHistoryMessageWithMsgId:(NSString * _Nullable)msgId
+- (void)getHistoryMessages:(NSString * _Nullable)msgId
                                  target:(NSString * _Nonnull)target
                             sessionType:(RXIMSessionType)sessionType
                                   limit:(NSInteger)limit
@@ -119,7 +119,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 通过消息id获取消息体
  * @param msgId 消息id
  */
--(RXIMMessage *)getMsgWithMsgid:(NSString * _Nonnull)msgId;
+-(RXIMMessage *)getMessageWithMsgId:(NSString * _Nonnull)msgId;
 
 /**
  * 设置语音消息已播放

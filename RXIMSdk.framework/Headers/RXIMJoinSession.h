@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RXIMJoinSession : NSObject
 
 /** Session ID */
-@property(nonatomic, copy) NSString *conversation_id;
+@property(nonatomic, copy) NSString *sessionID;
 
 /** 会话cp扩展字段 */
 @property (nonatomic, strong, nullable) NSDictionary<NSString *,NSString *> *ext;
